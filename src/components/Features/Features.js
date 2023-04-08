@@ -11,7 +11,7 @@ const Features = () => {
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             The best for every budget
           </div>
-          <p className="mb-5 text-gray-500">
+          <p className="mb-6 text-gray-500">
             Find high-quality services at every price point. No hourly rates,
             just project-based pricing.
           </p>
@@ -19,7 +19,7 @@ const Features = () => {
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             Quality work done quickly
           </div>
-          <p className="mb-5 text-gray-500">
+          <p className="mb-6 text-gray-500">
             Find the right freelancer to begin working on your project within
             minutes.
           </p>
@@ -27,7 +27,7 @@ const Features = () => {
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             Protected payments, every time
           </div>
-          <p className="mb-5 text-gray-500">
+          <p className="mb-6 text-gray-500">
             Always know what you'll pay upfront. Your payment isn't released
             until you approve the work.
           </p>
@@ -35,7 +35,7 @@ const Features = () => {
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             24/7 support
           </div>
-          <p className="mb-5 text-gray-500">
+          <p className="mb-6 text-gray-500">
             Find high-quality services at every price point. No hourly rates,
             just project-based pricing.
           </p>
