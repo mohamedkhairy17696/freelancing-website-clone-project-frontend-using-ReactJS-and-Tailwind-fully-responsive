@@ -5,16 +5,16 @@ const FeaturesDark = () => {
     <div className="bg-indigo-950">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-20 py-20 justify-center items-center">
         <div className="item">
-          <h1 className="text-3xl font-bold mb-6 text-white">
+          <h1 className="text-3xl font-bold mb-3 text-white">
             Freelancer business.
             <span class="ml-2 font-semibold bg-indigo-800 text-white text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-yellow-300 border border-indigo-800">
               New
             </span>
           </h1>
-          <h1 className="text-2xl font-bold mb-6 text-white">
+          <h1 className="text-2xl font-bold mb-3 text-white">
             A business solution designed for <i>teams</i>
           </h1>
-          <p className="text-white font-medium mb-6">
+          <p className="text-white font-medium mt-10 mb-8">
             Upgrade to a curated experience packed with tools and benefits,
             dedicated to businesses
           </p>
