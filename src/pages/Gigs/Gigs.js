@@ -27,12 +27,12 @@ const Gigs = () => {
           Freelancer / Graphics & Design{" "}
         </span>
         <h1 className="font-bold">AI Artists</h1>
-        <p>
+        <div className="text-slate-800">
           Explore the boundaries of art and technology with Liverr's AI artists
-        </p>
+        </div>
         <div className="menu flex md:flex-1">
           <div className="left flex md:flex-1">
-            <div>Budget</div>
+            <div className="text-slate-800 font-bold">Budget</div>
             <input
               className="my-2 block"
               ref={minRef}
