@@ -33,7 +33,7 @@ const FeaturesDark = () => {
             Manage teamwork and boost productivity with one powerful workspace
           </div>
           <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded my-5">
-            Explore Fiverr Business
+            Explore Freelancer Business
           </button>
         </div>
         <div>
