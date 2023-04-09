@@ -31,7 +31,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Gig />,
         },
         {
           path: "/gigs",
