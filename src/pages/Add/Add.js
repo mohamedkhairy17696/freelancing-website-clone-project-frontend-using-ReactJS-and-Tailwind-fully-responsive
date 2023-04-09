@@ -2,7 +2,7 @@ import React from "react";
 import "./Add.scss";
 const Add = () => {
   return (
-    <div className="container my-20 mx-5 md:mx-20">
+    <div className="container my-20 mx-5 md:mx-20 lg:mx-50">
       <h1 className="text-xl font-bold mb-6">Add New Gig</h1>
       <div className="grid gap-3 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center	items-center mr-8">
         <div>
@@ -27,14 +27,15 @@ const Add = () => {
               Select an option
             </label>
             <select
-              id="categories"
+              name="cats"
+              id="cats"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option selected>Choose a category</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
+              <option value="design">Design</option>
+              <option value="web">Web Development</option>
+              <option value="animation">Animation</option>
+              <option value="music">Music</option>
             </select>
           </div>
           <div className="mt-6">
@@ -176,7 +177,7 @@ const Add = () => {
       <div>
         <button
           type="button"
-          className="mt-8	text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+          className="mt-8	text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
         >
           Create
         </button>
