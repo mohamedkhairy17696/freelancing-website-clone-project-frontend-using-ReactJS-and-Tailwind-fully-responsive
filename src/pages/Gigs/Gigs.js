@@ -24,7 +24,7 @@ const Gigs = () => {
     <div className="gigs">
       <div className="container mx-12">
         <span className="text-slate-800 font-semibold">
-          Fiverr / Graphics & Design{" "}
+          Freelancer / Graphics & Design{" "}
         </span>
         <h1 className="font-bold">AI Artists</h1>
         <p>
