@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: "Fiverr Business", href: "/", current: false },
     { name: "Explore", href: "/", current: false },
     { name: "English", href: "/", current: false },
+    { name: "SignIn", href: "/", current: false },
   ];
 
   return (
