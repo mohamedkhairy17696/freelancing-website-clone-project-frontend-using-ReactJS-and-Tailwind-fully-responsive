@@ -30,9 +30,9 @@ const Navbar = () => {
   };
 
   const navigation = [
-    { name: "Fiverr Business", href: "#", current: false },
-    { name: "Explore", href: "#", current: false },
-    { name: "English", href: "#", current: false },
+    { name: "Fiverr Business", href: "/", current: false },
+    { name: "Explore", href: "/", current: false },
+    { name: "English", href: "/", current: false },
   ];
 
   return (
