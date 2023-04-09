@@ -9,31 +9,30 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const isActive = () => {
-    window.scrollY > 0 ? setActive(true) : setActive(false);
-  };
+  // const isActive = () => {
+  //   window.scrollY > 0 ? setActive(true) : setActive(false);
+  // };
 
-  useEffect(() => {
-    window.addEventListener("scroll", isActive);
-    return () => {
-      window.removeEventListener("scroll", isActive);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", isActive);
+  //   return () => {
+  //     window.removeEventListener("scroll", isActive);
+  //   };
+  // }, []);
 
   const currentUser = {
     id: 1,
     username: "Anna",
-    isSeller: true,
+    isSeller: false,
   };
 
   const navigation = [
     { name: "Fiverr Business", href: "#", current: false },
     { name: "Explore", href: "#", current: false },
     { name: "English", href: "#", current: false },
-    { name: "Become a seller", href: "#", current: false },
   ];
 
   return (
@@ -62,9 +61,9 @@ const Navbar = () => {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
@@ -74,8 +73,17 @@ const Navbar = () => {
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
+                    {!currentUser?.isSeller && (
+                      <Link
+                        to=""
+                        className="bg-emerald-900 text-gray-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        aria-current="page"
+                      >
+                        Become A Seller
+                      </Link>
+                    )}
                   </div>
                 </div>
                 <button className="bg-transparent hover:bg-emerald-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
@@ -107,33 +115,59 @@ const Navbar = () => {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to="#"
+                            to="/mygigs"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
                             )}
                           >
-                            Your Profile
+                            Gigs
                           </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to="#"
+                            to="/add"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
                             )}
                           >
-                            Settings
+                            Add New Gig
                           </Link>
                         )}
                       </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to="#"
+                            to="/orders"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Orders
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/messages"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Messages
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
