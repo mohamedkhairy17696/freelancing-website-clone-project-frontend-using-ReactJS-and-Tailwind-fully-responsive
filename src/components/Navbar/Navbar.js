@@ -9,20 +9,6 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  // const [active, setActive] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  // const isActive = () => {
-  //   window.scrollY > 0 ? setActive(true) : setActive(false);
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", isActive);
-  //   return () => {
-  //     window.removeEventListener("scroll", isActive);
-  //   };
-  // }, []);
-
   const currentUser = {
     id: 1,
     username: "Anna",
