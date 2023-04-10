@@ -27,7 +27,7 @@ const Messages = () => {
             <th>Action</th>
           </tr>
           <tr className="active">
-            <td>Charley Sharp</td>
+            <td>Mohamed</td>
             <td>
               <Link to="/message/123" className="link">
                 {message.substring(0, 100)}...
@@ -39,7 +39,7 @@ const Messages = () => {
             </td>
           </tr>
           <tr className="active">
-            <td>John Doe</td>
+            <td>Ahmed</td>
 
             <td>
               <Link to="/message/123" className="link hover:text-slate-600">
@@ -52,7 +52,7 @@ const Messages = () => {
             </td>
           </tr>
           <tr>
-            <td>Elinor Good</td>
+            <td>Ahmed</td>
             <td>
               <Link to="/message/123" className="link">
                 {message.substring(0, 100)}...
@@ -61,7 +61,7 @@ const Messages = () => {
             <td>1 day ago</td>
           </tr>
           <tr>
-            <td>Garner David </td>
+            <td>Mostafa</td>
             <td>
               <Link to="/message/123" className="link">
                 {message.substring(0, 100)}...
@@ -70,7 +70,7 @@ const Messages = () => {
             <td>2 days ago</td>
           </tr>
           <tr>
-            <td>Troy Oliver</td>
+            <td>Mohamed</td>
             <td>{message.substring(0, 100)}</td>
             <td>1 week ago</td>
           </tr>
