@@ -45,16 +45,16 @@ const Hero = () => {
                 <span className="mb-2 text-white text-md font-medium	pr-2">
                   Popular:
                 </span>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-semibold hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                   Website Design
                 </button>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-semibold hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                   WordPress
                 </button>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-semibold hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                   Logo Design
                 </button>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-semibold hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                   AI Services
                 </button>
               </div>

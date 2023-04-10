@@ -4,10 +4,10 @@ const Gig = () => {
   return (
     <div className="gig">
       <div className="container mx-6 my-6 lg:mx-20 lg:my-20">
-        <p className="text-md font-semibold mb-5">
+        <p className="text-lg font-semibold mb-5">
           Frellancer / Graphics & Design
         </p>
-        <h1 className="text-2xlg font-bold mb-2">
+        <h1 className="text-2xlg mb-2">
           I will do business modern minimalist logo design
         </h1>
         <div className="flex mt-5">
@@ -95,7 +95,7 @@ const Gig = () => {
                 alt=""
               />
             </Slider>
-            <h2 className="text-xl font-bold mt-6">About This Gig</h2>
+            <h2 className="text-2xl font-medium	 mt-6">About This Gig</h2>
             <p className="mt-3">
               Welcome to my creative minimalist logo design gig.
               <br /> This gig is the league of extremely talented logo
@@ -156,7 +156,7 @@ const Gig = () => {
           </div>
         </div>
         <div className="mt-12">
-          <h2 className="text-xl font-bold">About The Seller</h2>
+          <h2 className="text-2xl font-medium	">About The Seller</h2>
           <div className="flex mt-5">
             <img
               className="w-20 h-20 rounded-full"
@@ -228,25 +228,25 @@ const Gig = () => {
               <div>
                 <div className="my-3">
                   <p>From</p>
-                  <h3 className="mt-1 text-xl font-semibold">USA</h3>
+                  <h3 className="mt-1 text-xl font-medium	">USA</h3>
                 </div>
                 <div className="my-3">
                   <p>Avg. response time</p>
-                  <h3 className="mt-1 text-xl font-semibold">4 Hours</h3>
+                  <h3 className="mt-1 text-xl font-medium	">4 Hours</h3>
                 </div>
                 <div className="my-3">
                   <p>Languages</p>
-                  <h3 className="mt-1 text-xl font-semibold">English</h3>
+                  <h3 className="mt-1 text-xl font-medium	">English</h3>
                 </div>
               </div>
               <div>
                 <div className="my-3">
                   <p>Member since</p>
-                  <h3 className="mt-1 text-xl font-semibold">USA</h3>
+                  <h3 className="mt-1 text-xl font-medium	">USA</h3>
                 </div>
                 <div className="my-3">
                   <p>Avg. response time</p>
-                  <h3 className="mt-1 text-xl font-semibold">4 Hours</h3>
+                  <h3 className="mt-1 text-xl font-medium	">4 Hours</h3>
                 </div>
               </div>
             </div>
@@ -261,7 +261,7 @@ const Gig = () => {
         </div>
 
         <div className="reviews">
-          <h2 className="text-xl font-bold mt-20 mb-8">Reviews</h2>
+          <h2 className="text-2xl font-medium	 mt-20 mb-8">Reviews</h2>
           <div className="review">
             <div className="flex">
               <img
@@ -270,7 +270,7 @@ const Gig = () => {
                 alt="Rounded avatar"
               />
               <div className="ml-2">
-                <p className="text-md font-semibold">Mohamed</p>
+                <p className="text-md font-medium	">Mohamed</p>
                 <div className="flex">
                   <img
                     className="w-6 mr-2 rounded"
@@ -358,7 +358,7 @@ const Gig = () => {
                 alt="Rounded avatar"
               />
               <div className="ml-2">
-                <p className="text-md font-semibold">Mohamed</p>
+                <p className="text-md font-medium	">Mohamed</p>
                 <div className="flex">
                   <img
                     className="w-6 mr-2 rounded"
@@ -446,7 +446,7 @@ const Gig = () => {
                 alt="Rounded avatar"
               />
               <div className="ml-2">
-                <p className="text-md font-semibold">Mohamed</p>
+                <p className="text-md font-medium	">Mohamed</p>
                 <div className="flex">
                   <img
                     className="w-6 mr-2 rounded"
