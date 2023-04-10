@@ -27,7 +27,9 @@ const Gigs = () => {
           Freelancer / Graphics & Design{" "}
         </span>
         <h1 className="font-bold">AI Artists</h1>
-        <div className="text-slate-800">Title : Lorem Ipsum</div>
+        <div className="text-slate-800">
+          Explore the boundaries of art and technology with Fiverr's AI artists
+        </div>
         <div className="menu flex md:flex-1">
           <div className="left flex md:flex-1">
             <div className="text-slate-800 font-bold">Budget</div>
