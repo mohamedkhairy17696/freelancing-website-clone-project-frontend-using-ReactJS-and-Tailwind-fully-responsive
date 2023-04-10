@@ -13,10 +13,10 @@ const Gig = () => {
         <div className="flex mt-5">
           <img
             className="w-12 h-12 rounded-full"
-            src="https://images.pexels.com/photos/720327/pexels-photo-720327.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            src="https://images.pexels.com/photos/91224/pexels-photo-91224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="Rounded avatar"
           />
-          <p className="mt-2.5 mx-3">Emma</p>
+          <p className="mt-2.5 mx-3">Mohamed</p>
           <div class="flex items-center">
             <svg
               aria-hidden="true"
@@ -76,17 +76,22 @@ const Gig = () => {
             <Slider slidesToShow={1} arrowsScroll={1} className="slider">
               <img
                 className="rounded"
-                src="https://images.pexels.com/photos/1074535/pexels-photo-1074535.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/905163/pexels-photo-905163.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
               />
               <img
                 className="rounded"
-                src="https://images.pexels.com/photos/1462935/pexels-photo-1462935.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/7661590/pexels-photo-7661590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
               />
               <img
                 className="rounded"
-                src="https://images.pexels.com/photos/1054777/pexels-photo-1054777.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/1769735/pexels-photo-1769735.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt=""
+              />
+              <img
+                className="rounded"
+                src="https://images.pexels.com/photos/4389660/pexels-photo-4389660.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
               />
             </Slider>
@@ -155,10 +160,10 @@ const Gig = () => {
           <div className="flex mt-5">
             <img
               className="w-20 h-20 rounded-full"
-              src="https://images.pexels.com/photos/720327/pexels-photo-720327.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src="https://images.pexels.com/photos/91224/pexels-photo-91224.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Rounded avatar"
             />
-            <p className="mt-7 mx-3">Emma</p>
+            <p className="mt-7 mx-3">Mohamed</p>
             <div class="flex items-center">
               <svg
                 aria-hidden="true"
@@ -261,18 +266,18 @@ const Gig = () => {
             <div className="flex">
               <img
                 class="w-14 h-14 rounded-full"
-                src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
               <div className="ml-2">
                 <p className="text-md font-semibold">Mohamed</p>
                 <div className="flex">
                   <img
-                    className="w-6"
-                    src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
+                    className="w-6 mr-2 rounded"
+                    src="https://www.sitographics.com/enciclog/banderas/africa/image_2012/Egipto.gif"
                     alt=""
                   />
-                  <span>United States</span>
+                  <span>Egypt</span>
                 </div>
               </div>
             </div>
@@ -349,18 +354,18 @@ const Gig = () => {
             <div className="flex">
               <img
                 class="w-14 h-14 rounded-full"
-                src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
               <div className="ml-2">
                 <p className="text-md font-semibold">Mohamed</p>
                 <div className="flex">
                   <img
-                    className="w-6"
-                    src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
+                    className="w-6 mr-2 rounded"
+                    src="https://www.sitographics.com/enciclog/banderas/africa/image_2012/Egipto.gif"
                     alt=""
                   />
-                  <span>United States</span>
+                  <span>Egypt</span>
                 </div>
               </div>
             </div>
@@ -437,18 +442,18 @@ const Gig = () => {
             <div className="flex">
               <img
                 class="w-14 h-14 rounded-full"
-                src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
               <div className="ml-2">
                 <p className="text-md font-semibold">Mohamed</p>
                 <div className="flex">
                   <img
-                    className="w-6"
-                    src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
+                    className="w-6 mr-2 rounded"
+                    src="https://www.sitographics.com/enciclog/banderas/africa/image_2012/Egipto.gif"
                     alt=""
                   />
-                  <span>United States</span>
+                  <span>Egypt</span>
                 </div>
               </div>
             </div>

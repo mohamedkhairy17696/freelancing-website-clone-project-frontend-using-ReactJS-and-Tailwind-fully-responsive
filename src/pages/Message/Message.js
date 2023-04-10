@@ -44,7 +44,7 @@ const Message = () => {
               </div>
               <img
                 class="w-10 h-10 rounded-full"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
             </div>
@@ -59,7 +59,7 @@ const Message = () => {
               </div>
               <img
                 class="w-10 h-10 rounded-full"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
             </div>
@@ -97,7 +97,7 @@ const Message = () => {
               </div>
               <img
                 class="w-10 h-10 rounded-full"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
             </div>
@@ -115,7 +115,7 @@ const Message = () => {
               </div>
               <img
                 class="w-10 h-10 rounded-full"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
             </div>
@@ -130,7 +130,7 @@ const Message = () => {
               </div>
               <img
                 class="w-10 h-10 rounded-full"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
             </div>
@@ -164,7 +164,7 @@ const Message = () => {
               </div>
               <img
                 class="w-10 h-10 rounded-full"
-                src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt="Rounded avatar"
               />
             </div>
