@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home/Home";
 import Add from "./pages/Add/Add";
-import Gig from "./pages/Gig/Gig";
 import Gigs from "./pages/Gigs/Gigs";
 import Login from "./pages/Login/Login";
 import Message from "./pages/Message/Message";
 import Messages from "./pages/Messages/Messages";
 import MyGigs from "./pages/MyGigs/MyGigs";
+import GigDetails from "./pages/GigDetails/GigDetails";
 import Orders from "./pages/Orders/Orders";
 import Register from "./pages/Register/Register";
 
@@ -59,7 +59,7 @@ function App() {
         },
         {
           path: "/gig/:id",
-          element: <Gig />,
+          element: <GigDetails />,
         },
       ],
     },
