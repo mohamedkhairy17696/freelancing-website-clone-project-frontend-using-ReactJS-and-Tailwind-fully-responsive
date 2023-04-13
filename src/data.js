@@ -45,7 +45,7 @@ export const cards = [
     id: 8,
     title: "Illustration",
     desc: "Color you dreams",
-    img: "https://images.pexels.com/photos/4483093/pexels-photo-4483093.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "https://images.pexels.com/photos/4050216/pexels-photo-4050216.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];
 
