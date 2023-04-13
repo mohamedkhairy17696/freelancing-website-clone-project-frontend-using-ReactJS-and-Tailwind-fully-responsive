@@ -12,6 +12,7 @@ import MyGigs from "./pages/MyGigs/MyGigs";
 import GigDetails from "./pages/GigDetails/GigDetails";
 import Orders from "./pages/Orders/Orders";
 import Register from "./pages/Register/Register";
+import NotFound from "./pages/NotFound/NotFound";
 
 function App() {
   const Layout = () => {
@@ -70,6 +71,10 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/notfound",
+      element: <NotFound />,
     },
   ]);
 

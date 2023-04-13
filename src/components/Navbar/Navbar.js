@@ -8,11 +8,7 @@ function classNames(...classes) {
 }
 
 const Navbar = () => {
-  const currentUser = {
-    id: 1,
-    username: "Anna",
-    isSeller: false,
-  };
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   const navigation = [
     { name: "Freelancer Business", href: "/", current: false },
@@ -38,9 +34,9 @@ const Navbar = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex mx-8 px-8 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <h1 className="text-white text-xl font-semibold">
+                  <h1 className="text-white text-xl font-semibold ">
                     freelancer
                   </h1>
                 </div>
@@ -77,6 +73,7 @@ const Navbar = () => {
                 <button className="bg-transparent hover:bg-emerald-500 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
                   Join
                 </button>
+                <p className="text-white mx-2">{currentUser?.username}</p>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
@@ -85,11 +82,12 @@ const Navbar = () => {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        src={currentUser.img || "/img/noavatar.jpg"}
                         alt=""
                       />
                     </Menu.Button>
                   </div>
+
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"

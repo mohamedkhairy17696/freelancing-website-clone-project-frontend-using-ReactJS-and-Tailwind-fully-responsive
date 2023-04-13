@@ -67,6 +67,7 @@ const Login = () => {
               >
                 Sign in
               </button>
+              {error && error}
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{" "}
                 <Link
