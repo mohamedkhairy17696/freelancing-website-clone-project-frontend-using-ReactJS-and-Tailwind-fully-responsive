@@ -36,7 +36,7 @@ const Navbar = () => {
               </div>
               <div className="flex mx-8 px-8 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <h1 className="text-white text-xl font-semibold ">
+                  <h1 className="text-slate-100 text-2xl font-md ">
                     freelancer
                   </h1>
                 </div>
@@ -59,21 +59,19 @@ const Navbar = () => {
                         {item.name}
                       </Link>
                     ))}
-                    {!currentUser?.isSeller && (
-                      <Link
-                        to=""
-                        className="bg-emerald-900 text-gray-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                        aria-current="page"
-                      >
-                        Become A Seller
-                      </Link>
-                    )}
+                    <Link
+                      to=""
+                      className="bg-emerald-900 text-gray-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                      aria-current="page"
+                    >
+                      Become A Seller
+                    </Link>
                   </div>
                 </div>
                 <button className="bg-transparent hover:bg-emerald-500 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
                   Join
                 </button>
-                <p className="text-white mx-2">{currentUser?.username}</p>
+                <p className="text-slate-100 mx-2">{currentUser?.username}</p>
 
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
@@ -82,7 +80,8 @@ const Navbar = () => {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
-                        src={currentUser.img || "/img/noavatar.jpg"}
+                        // src={currentUser.img || "/img/noavatar.jpg"}
+                        src="/img/noavatar.jpg"
                         alt=""
                       />
                     </Menu.Button>
@@ -98,36 +97,33 @@ const Navbar = () => {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {currentUser.isSeller && (
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              to="/mygigs"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
-                              )}
-                            >
-                              Gigs
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      )}
-                      {currentUser.isSeller && (
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              to="/add"
-                              className={classNames(
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm text-gray-700"
-                              )}
-                            >
-                              Add New Gig
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      )}
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/mygigs"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Gigs
+                          </Link>
+                        )}
+                      </Menu.Item>
+
+                      <Menu.Item>
+                        {({ active }) => (
+                          <Link
+                            to="/add"
+                            className={classNames(
+                              active ? "bg-gray-100" : "",
+                              "block px-4 py-2 text-sm text-gray-700"
+                            )}
+                          >
+                            Add New Gig
+                          </Link>
+                        )}
+                      </Menu.Item>
                       <Menu.Item>
                         {({ active }) => (
                           <Link

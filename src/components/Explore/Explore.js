@@ -4,7 +4,7 @@ const Explore = () => {
   return (
     <div className="explore mx-20 py-20">
       <div className="container">
-        <h1 className="text-3xl font-bold mb-6 text-slate-700">
+        <h1 className="text-3xl font-semibold mb-6 text-slate-700">
           Explore the marketplace
         </h1>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-5 justify-center	items-center">

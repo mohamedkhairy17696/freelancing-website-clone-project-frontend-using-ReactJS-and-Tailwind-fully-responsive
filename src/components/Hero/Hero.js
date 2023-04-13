@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="container mx-auto xl:px-32">
           <div className="grid lg:grid-cols-2 gap-12 flex items-center">
             <div className="mt-12 lg:mt-0">
-              <h1 className="text-5xl text-slate-50 md:text-6xl xl:text-7xl font-bold tracking-tight mb-12">
+              <h1 className="text-5xl text-slate-200 md:text-6xl xl:text-7xl font-medium tracking-tight mb-12">
                 Find the perfect freelance services for your business
               </h1>
               <div className="mb-3 xl:w-96">

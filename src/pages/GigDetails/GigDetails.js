@@ -217,7 +217,7 @@ const Gig = () => {
               </svg>
             </div>
           </div>
-          <button class="ml-24 bg-transparent hover:bg-emerald-600	 text-emerald-600 font-semibold hover:text-white py-2 px-4 border border-emerald-600 hover:border-transparent rounded">
+          <button class="ml-24 bg-transparent hover:bg-emerald-600	text-emerald-600 font-medium hover:text-white py-2 px-4 border border-emerald-600 hover:border-transparent rounded">
             Contact Me
           </button>
         </div>
