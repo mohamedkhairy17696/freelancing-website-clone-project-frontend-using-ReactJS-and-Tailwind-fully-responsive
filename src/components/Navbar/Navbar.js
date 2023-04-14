@@ -70,13 +70,15 @@ const Navbar = () => {
                         {item.name}
                       </Link>
                     ))}
-                    <Link
-                      to=""
-                      className="bg-emerald-900 text-gray-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                      aria-current="page"
-                    >
-                      Become A Seller
-                    </Link>
+                    {!currentUser?.isSeller && (
+                      <Link
+                        to=""
+                        className="bg-emerald-900 text-gray-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        aria-current="page"
+                      >
+                        Become A Seller
+                      </Link>
+                    )}
                   </div>
                 </div>
                 <button className="bg-transparent hover:bg-emerald-500 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
