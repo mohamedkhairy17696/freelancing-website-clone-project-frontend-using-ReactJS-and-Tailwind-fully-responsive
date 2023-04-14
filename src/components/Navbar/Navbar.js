@@ -72,7 +72,7 @@ const Navbar = () => {
                     ))}
                     {!currentUser?.isSeller && (
                       <Link
-                        to=""
+                        to="/"
                         className="bg-emerald-900 text-gray-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                         aria-current="page"
                       >
@@ -81,9 +81,13 @@ const Navbar = () => {
                     )}
                   </div>
                 </div>
-                <button className="bg-transparent hover:bg-emerald-500 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
-                  Join
-                </button>
+                {!currentUser && (
+                  <Link to="/register">
+                    <button className="bg-transparent hover:bg-emerald-500 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
+                      Join
+                    </button>
+                  </Link>
+                )}
                 <p className="text-slate-100 mx-2">{currentUser?.username}</p>
 
                 {/* Profile dropdown */}
