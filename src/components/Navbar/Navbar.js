@@ -1,7 +1,8 @@
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import newRequest from "../../utils/newRequest";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -9,12 +10,22 @@ function classNames(...classes) {
 
 const Navbar = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const navigate = useNavigate();
 
+  const logout = async () => {
+    try {
+      await newRequest.post("/auth/logout");
+      localStorage.removeItem("currentUser");
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const navigation = [
-    { name: "Freelancer Business", href: "/", current: false },
-    { name: "Explore", href: "/", current: false },
-    { name: "English", href: "/", current: false },
-    { name: "SignIn", href: "/", current: false },
+    { name: "Freelancer Business", to: "/", current: false },
+    { name: "Explore", to: "/", current: false },
+    { name: "English", to: "/", current: false },
+    // { name: "SignIn", href: "/", current: false },
   ];
 
   return (
@@ -76,15 +87,25 @@ const Navbar = () => {
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-3">
                   <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="h-8 w-8 rounded-full"
-                        // src={currentUser.img || "/img/noavatar.jpg"}
-                        src="/img/noavatar.jpg"
-                        alt=""
-                      />
-                    </Menu.Button>
+                    {currentUser ? (
+                      <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span className="sr-only">Open user menu</span>
+                        <img
+                          className="h-8 w-8 rounded-full"
+                          // src={currentUser.img || "/img/noavatar.jpg"}
+                          src="/img/noavatar.jpg"
+                          alt=""
+                        />
+                      </Menu.Button>
+                    ) : (
+                      <Link
+                        to="/login"
+                        className="bg-emerald-900 text-gray-300 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                        aria-current="page"
+                      >
+                        SignIn
+                      </Link>
+                    )}
                   </div>
 
                   <Transition
@@ -96,74 +117,95 @@ const Navbar = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/mygigs"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
+                    {currentUser ? (
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        {currentUser.isSeller && (
+                          <Menu.Item>
+                            {({ active }) => (
+                              <Link
+                                to="/mygigs"
+                                className={classNames(
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
+                                )}
+                              >
+                                Gigs
+                              </Link>
                             )}
-                          >
-                            Gigs
-                          </Link>
+                          </Menu.Item>
                         )}
-                      </Menu.Item>
 
+                        {currentUser.isSeller && (
+                          <Menu.Item>
+                            {({ active }) => (
+                              <Link
+                                to="/add"
+                                className={classNames(
+                                  active ? "bg-gray-100" : "",
+                                  "block px-4 py-2 text-sm text-gray-700"
+                                )}
+                              >
+                                Add New Gig
+                              </Link>
+                            )}
+                          </Menu.Item>
+                        )}
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              to="/orders"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Orders
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              to="/messages"
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Messages
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <Link
+                              to="/"
+                              onClick={logout}
+                              className={classNames(
+                                active ? "bg-gray-100" : "",
+                                "block px-4 py-2 text-sm text-gray-700"
+                              )}
+                            >
+                              Sign out
+                            </Link>
+                          )}
+                        </Menu.Item>
+                      </Menu.Items>
+                    ) : (
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            to="/add"
+                            to="/login"
                             className={classNames(
                               active ? "bg-gray-100" : "",
                               "block px-4 py-2 text-sm text-gray-700"
                             )}
                           >
-                            Add New Gig
+                            Sign in
                           </Link>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/orders"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Orders
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/messages"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Messages
-                          </Link>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            to="/"
-                            className={classNames(
-                              active ? "bg-gray-100" : "",
-                              "block px-4 py-2 text-sm text-gray-700"
-                            )}
-                          >
-                            Sign out
-                          </Link>
-                        )}
-                      </Menu.Item>
-                    </Menu.Items>
+                    )}
                   </Transition>
                 </Menu>
               </div>
