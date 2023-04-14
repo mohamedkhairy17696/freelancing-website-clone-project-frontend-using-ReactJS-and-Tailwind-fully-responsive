@@ -92,8 +92,7 @@ const Navbar = () => {
                         <span className="sr-only">Open user menu</span>
                         <img
                           className="h-8 w-8 rounded-full"
-                          // src={currentUser.img || "/img/noavatar.jpg"}
-                          src="/img/noavatar.jpg"
+                          src={currentUser.img || "/img/noavatar.jpg"}
                           alt=""
                         />
                       </Menu.Button>
