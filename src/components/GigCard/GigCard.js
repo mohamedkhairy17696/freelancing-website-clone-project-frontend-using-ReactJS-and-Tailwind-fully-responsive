@@ -24,7 +24,7 @@ const GigCard = ({ item }) => {
         setError(err.message);
         console.log(err);
       });
-  }, [data]);
+  }, [item.userId]);
   return (
     <Link to={`/gig/${item._id}`} className="link">
       <div className="gigCard ">
