@@ -1,18 +1,44 @@
-import React from "react";
-import { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useRef } from "react";
 import "./Gigs.scss";
-import { gigs } from "../../data";
 import GigCard from "../../components/GigCard/GigCard";
+import newRequest from "../../utils/newRequest";
+import Spinner from "../../components/Spinner/Spinner";
+import { useLocation } from "react-router-dom";
 
 const Gigs = () => {
   const minRef = useRef();
   const maxRef = useRef();
+  const [data, setData] = useState([]);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
+  const [sort, setSort] = useState("sales");
+  const { search } = useLocation();
 
-  const apply = () => {
-    console.log(minRef.current.value);
-    console.log(maxRef.current.value);
+  useEffect(() => {
+    newRequest
+      .get(
+        `/gigs?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+      )
+      .then((res) => {
+        setData(res.data);
+        setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(true);
+        setError(err.message);
+        console.log(err);
+      });
+  }, [data, sort, search]);
+
+  const reSort = (type) => {
+    setSort(type);
   };
 
+  const apply = () => {
+    setData(data);
+  };
   return (
     <div className="gigs">
       <div className="container mx-12">
@@ -56,15 +82,23 @@ const Gigs = () => {
               id="filter"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-700 focus:border-emerald-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-700 dark:focus:border-emerald-700"
             >
-              <option value="bestSelling">Best Selling</option>
-              <option value="newest">Newest</option>
-              <option value="popular">Popular</option>
+              <option value="bestSelling" onClick={() => reSort("sales")}>
+                Best Selling
+              </option>
+              <option value="newest" onClick={() => reSort("createdAt")}>
+                Newest
+              </option>
+              <option value="popular" onClick={() => reSort("sales")}>
+                Popular
+              </option>
             </select>
           </div>
         </div>
         <div className="cards">
-          {gigs.map((gig) => (
-            <GigCard key={gig.id} item={gig} />
+          {isPending && <Spinner />}
+          {error && <div className="text-center">{error}</div>}
+          {data.map((gig) => (
+            <GigCard key={gig._id} item={gig} />
           ))}
         </div>
       </div>

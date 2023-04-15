@@ -1,21 +1,50 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./GigCard.scss";
+import { useState } from "react";
+import newRequest from "../../utils/newRequest";
+import { useEffect } from "react";
+import Spinner from "../Spinner/Spinner";
 
 const GigCard = ({ item }) => {
+  const [data, setData] = useState([]);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    newRequest
+      .get(`/users/${item.userId}`)
+      .then((res) => {
+        setData(res.data);
+        setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(true);
+        setError(err.message);
+        console.log(err);
+      });
+  }, [data]);
   return (
-    <Link to="/gig/1" className="link">
+    <Link to={`/gig/${item._id}`} className="link">
       <div className="gigCard ">
-        <img src={item.img} alt="" />
+        <img src={item.cover} alt="" />
         <div className="info">
-          <div className="user">
-            <img src={item.pp} alt="" />
-            <span>{item.username}</span>
-          </div>
+          {isPending ? (
+            <Spinner />
+          ) : (
+            <div className="user">
+              <img src={data.img || "/img/noavatar.jpg"} alt="" />
+              <span>{data.username}</span>
+            </div>
+          )}
           <h2 className="text-black text-md">{item.desc}</h2>
           <div className="star">
             <img src="./img/star.png" alt="" />
-            <span>{item.star}</span>
+            <span>
+              {!isNaN(item.totalStars / item.starNumber) &&
+                Math.round(item.totalStars / item.starNumber)}
+            </span>
           </div>
         </div>
         <hr />
