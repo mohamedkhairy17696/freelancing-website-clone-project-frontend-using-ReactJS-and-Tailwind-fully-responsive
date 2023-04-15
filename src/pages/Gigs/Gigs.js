@@ -5,15 +5,8 @@ import { gigs } from "../../data";
 import GigCard from "../../components/GigCard/GigCard";
 
 const Gigs = () => {
-  const [sort, setSort] = useState("sales");
-  const [open, setOpen] = useState(false);
   const minRef = useRef();
   const maxRef = useRef();
-
-  const reSort = (type) => {
-    setSort(type);
-    setOpen(false);
-  };
 
   const apply = () => {
     console.log(minRef.current.value);
@@ -45,26 +38,28 @@ const Gigs = () => {
               type="number"
               placeholder="max"
             />
-            <button className="mr-3" onClick={apply}>
+            <button
+              className="bg-emerald-500 hover:bg-emerald-600 text-slate-100 font-md py-2 px-4 rounded my-5"
+              onClick={apply}
+            >
               Apply
             </button>
           </div>
           <div className="right ">
-            <span className="sortBy mx-1">Sort by</span>
-            <span className="sortType">
-              {sort === "sales" ? "Best Selling" : "Newest"}
-            </span>
-            <img src="./img/down.png" alt="" onClick={() => setOpen(!open)} />
-            {open && (
-              <div className="rightMenu">
-                {sort === "sales" ? (
-                  <span onClick={() => reSort("createdAt")}>Newest</span>
-                ) : (
-                  <span onClick={() => reSort("sales")}>Best Selling</span>
-                )}
-                <span onClick={() => reSort("sales")}>Popular</span>
-              </div>
-            )}
+            <label
+              for="filter"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Sort by
+            </label>
+            <select
+              id="filter"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-700 focus:border-emerald-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-700 dark:focus:border-emerald-700"
+            >
+              <option value="bestSelling">Best Selling</option>
+              <option value="newest">Newest</option>
+              <option value="popular">Popular</option>
+            </select>
           </div>
         </div>
         <div className="cards">
