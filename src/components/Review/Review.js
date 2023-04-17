@@ -26,7 +26,9 @@ const Review = ({ review }) => {
   return (
     <div className="review">
       {isPending && <Spinner />}
-      {error && <div>Something wrong in fetching data{error.message}</div>}
+      {error && (
+        <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
+      )}
       <div className="flex">
         <img
           class="w-8 h-8 rounded-full"

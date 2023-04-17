@@ -94,7 +94,9 @@ const Gigs = () => {
         </div>
         <div className="cards">
           {isPending && <Spinner />}
-          {error && <div className="text-center">{error}</div>}
+          {error && (
+            <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
+          )}
           {data.map((gig) => (
             <GigCard key={gig._id} item={gig} />
           ))}

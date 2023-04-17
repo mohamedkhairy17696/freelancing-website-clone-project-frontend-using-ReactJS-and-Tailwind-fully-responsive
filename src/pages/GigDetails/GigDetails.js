@@ -45,7 +45,9 @@ const Gig = () => {
   return (
     <div className="gig">
       {isPending && <Spinner />}
-
+      {error && (
+        <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
+      )}
       <div className="container mx-6 my-6 lg:mx-20 lg:my-20">
         <p className="text-lg font-semibold mb-5">
           Frellancer / Graphics & Design

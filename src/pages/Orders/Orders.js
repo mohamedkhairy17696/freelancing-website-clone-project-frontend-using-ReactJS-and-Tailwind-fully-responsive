@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Orders.scss";
+import Spinner from "../../components/Spinner/Spinner";
+import newRequest from "../../utils/newRequest";
 const Orders = () => {
-  const currentUser = {
-    id: 1,
-    username: "Anna",
-    isSeller: true,
-  };
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const [orders, setOrders] = useState([]);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    newRequest
+      .get(`/orders`)
+      .then((res) => {
+        setOrders(res.data);
+        setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(true);
+        setError(err.message);
+        console.log(err);
+      });
+  }, [orders]);
   return (
     <div className="orders">
       <div className="container">
@@ -21,108 +36,23 @@ const Orders = () => {
             {<th>{currentUser.isSeller ? "Buyer" : "Seller"}</th>}
             <th>Contact</th>
           </tr>
-          <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-            </td>
-            <td>Logo Design</td>
-            <td>
-              59.<sup>99</sup>
-            </td>
-            <td>Mohamed</td>
-            <td>
-              <img className="message" src="./img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-            </td>
-            <td>Logo Design</td>
-            <td>
-              59.<sup>99</sup>
-            </td>
-            <td>Mohamed</td>
-            <td>
-              <img className="message" src="./img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-            </td>
-            <td>Logo Design</td>
-            <td>
-              59.<sup>99</sup>
-            </td>
-            <td>Mohamed</td>
-            <td>
-              <img className="message" src="./img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-            </td>
-            <td>Logo Design</td>
-            <td>
-              59.<sup>99</sup>
-            </td>
-            <td>Mohamed</td>
-            <td>
-              <img className="message" src="./img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-            </td>
-            <td>Logo Design</td>
-            <td>
-              59.<sup>99</sup>
-            </td>
-            <td>Mohamed</td>
-            <td>
-              <img className="message" src="./img/message.png" alt="" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img
-                className="image"
-                src="https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-              />
-            </td>
-            <td>Logo Design</td>
-            <td>
-              59.<sup>99</sup>
-            </td>
-            <td>Mohamed</td>
-            <td>
-              <img className="message" src="./img/message.png" alt="" />
-            </td>
-          </tr>
+          {isPending && <Spinner />}
+          {error && (
+            <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
+          )}{" "}
+          {orders.map((order) => (
+            <tr key={order._id}>
+              <td>
+                <img className="image" src={order.img} alt="" />
+              </td>
+              <td>{order.title}</td>
+              <td>{order.price}</td>
+              <td>wait wait ...</td>
+              <td>
+                <img className="message" src="./img/message.png" alt="" />
+              </td>
+            </tr>
+          ))}
         </table>
       </div>
     </div>
