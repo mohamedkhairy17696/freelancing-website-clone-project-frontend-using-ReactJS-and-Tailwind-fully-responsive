@@ -50,8 +50,6 @@ const Reviews = ({ gigId }) => {
   return (
     <div className="reviews">
       <h2 className="text-2xl font-medium	 mt-20 mb-8">Reviews</h2>
-      {isPending && <Spinner />}
-      {error && <div>Something went wrong</div>}
       {data &&
         data.map((review) => (
           <div>
