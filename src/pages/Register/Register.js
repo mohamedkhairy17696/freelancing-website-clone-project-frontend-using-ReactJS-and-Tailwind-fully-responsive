@@ -13,6 +13,7 @@ const Register = () => {
     isSeller: false,
     desc: false,
   });
+
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
 
@@ -187,7 +188,7 @@ const Register = () => {
                   onChange={(e) => handleChange(e)}
                   className="bg-gray-50 border border-gray-300 text-slate-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="A short description of your self"
-                  required=""
+                  required
                 />
               </div>
               <button
