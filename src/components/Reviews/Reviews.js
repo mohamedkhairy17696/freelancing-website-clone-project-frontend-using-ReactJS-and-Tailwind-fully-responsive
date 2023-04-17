@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Review from "../Review/Review";
 import newRequest from "../../utils/newRequest";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import Spinner from "../Spinner/Spinner";
 
 const Reviews = ({ gigId }) => {
@@ -38,6 +37,12 @@ const Reviews = ({ gigId }) => {
       })
       .then(() => {
         setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(true);
+        setError(err.message);
+        console.log(err);
       });
   };
 
@@ -71,8 +76,9 @@ const Reviews = ({ gigId }) => {
           value={star}
           onChange={(e) => setStar(e.target.value)}
           id=""
-          className="mb-3 w-1/5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-600 focus:border-emerald-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-600 dark:focus:border-emerald-600"
+          className="w-1/5 mb-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-600 focus:border-emerald-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-600 dark:focus:border-emerald-600"
         >
+          <option selected>Choose N.of stars</option>
           <option value={1}>1</option>
           <option value={2}>2</option>
           <option value={3}>3</option>

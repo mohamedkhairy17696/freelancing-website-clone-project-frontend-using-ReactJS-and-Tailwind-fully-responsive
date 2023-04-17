@@ -42,10 +42,8 @@ const Gigs = () => {
   return (
     <div className="gigs">
       <div className="container mx-12">
-        <span className="text-slate-800 font-semibold">
-          Freelancer / Graphics & Design{" "}
-        </span>
-        <h1 className="font-bold">AI Artists</h1>
+        <span className="text-slate-800 font-semibold">Freelancer</span>
+        <h1 className="font-bold">Services and Gigs</h1>
         <div className="text-slate-800">
           Explore the boundaries of art and technology with Fiverr's AI artists
         </div>
