@@ -10,15 +10,40 @@ import Explore from "../../components/Explore/Explore";
 import FeaturesDark from "../../components/FeaturesDark/FeaturesDark";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import SlideForProjectCard from "../../components/SlideForProjectCard/SlideForProjectCard";
+import { useState } from "react";
+import { useEffect } from "react";
+import newRequest from "../../utils/newRequest";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Home = () => {
+  const [cats, setCats] = useState([]);
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    newRequest
+      .get(`/cats`)
+      .then((res) => {
+        setCats(res.data);
+        setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(true);
+        setError(err.message);
+        console.log(err);
+      });
+  }, [cats]);
   return (
     <div className="home">
       <Hero />
       <TrustedBy />
       <Slide>
-        {cards.map((card) => (
-          <CatCard key={card.id} card={card} />
+        {isPending && <Spinner />}
+        {error && (
+          <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
+        )}
+        {cats.map((cat) => (
+          <CatCard key={cat._id} cat={cat} />
         ))}
       </Slide>
       <Features />
