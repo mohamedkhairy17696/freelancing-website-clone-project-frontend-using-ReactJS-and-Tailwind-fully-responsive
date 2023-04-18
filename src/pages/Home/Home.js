@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../../components/Hero/Hero";
 import TrustedBy from "../../components/TrustedBy/TrustedBy";
 import Slide from "../../components/Slide/Slide";
-import { cards, projects } from "../../data";
+import { projects } from "../../data";
 import CatCard from "../../components/CatCard/CatCard";
 import "./Home.scss";
 import Features from "../../components/Features/Features";
