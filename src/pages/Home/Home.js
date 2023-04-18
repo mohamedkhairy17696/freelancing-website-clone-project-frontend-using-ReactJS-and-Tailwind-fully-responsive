@@ -38,10 +38,6 @@ const Home = () => {
       <Hero />
       <TrustedBy />
       <Slide>
-        {isPending && <Spinner />}
-        {error && (
-          <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
-        )}
         {cats.map((cat) => (
           <CatCard key={cat._id} cat={cat} />
         ))}
