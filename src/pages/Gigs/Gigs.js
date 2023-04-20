@@ -4,7 +4,7 @@ import "./Gigs.scss";
 import GigCard from "../../components/GigCard/GigCard";
 import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const Gigs = () => {
   const minRef = useRef();
@@ -14,11 +14,12 @@ const Gigs = () => {
   const [error, setError] = useState(null);
   const [sort, setSort] = useState("sales");
   const { search } = useLocation();
+  const { catTitle } = useParams();
 
   useEffect(() => {
     newRequest
       .get(
-        `/gigs?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+        `/gigs/?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}&catId=${catTitle}`
       )
       .then((res) => {
         setData(res.data);
@@ -30,7 +31,7 @@ const Gigs = () => {
         setError(err.message);
         console.log(err);
       });
-  }, [data, sort, search]);
+  }, [data, sort, search, catTitle]);
 
   const reSort = (type) => {
     setSort(type);

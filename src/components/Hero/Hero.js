@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    navigate(`gigs?search=${input}`);
+  };
   return (
     <div>
       <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left">
@@ -13,11 +19,12 @@ const Hero = () => {
               <div className="mb-3 xl:w-96">
                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                   <input
-                    type="search"
+                    type="text"
                     className="relative m-0 -mr-px block w-[1%] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-white outline-none transition duration-300 ease-in-out focus:border-primary focus:text-white focus:shadow-te-primary focus:outline-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
                     placeholder="Search"
-                    aria-label="Search"
+                    aria-label="text"
                     aria-describedby="button-addon1"
+                    onChange={(e) => setInput(e.target.value)}
                   />
                   <button
                     className="relative bg-emerald-500 z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
@@ -25,6 +32,7 @@ const Hero = () => {
                     id="button-addon1"
                     data-te-ripple-init
                     data-te-ripple-color="light"
+                    onClick={handleSubmit}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

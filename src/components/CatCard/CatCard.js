@@ -1,12 +1,10 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./CatCard.scss";
 
 const CatCard = ({ cat }) => {
-  const { catId } = useParams();
-
   return (
-    <Link to="/gigs?cat=design">
+    <Link to={`/gigs?search=${cat.title}`}>
       <div className="catCard">
         <img src={cat.img} alt="" />
         <span className="desc">{cat.desc}</span>

@@ -38,18 +38,18 @@ const GigCard = ({ item }) => {
               <span>{data.username}</span>
             </div>
           )}
-          <h2 className="text-black text-md">{item.desc}</h2>
-          <div className="star">
-            <img src="./img/star.png" alt="" />
+          <h2 className="text-slate-700 text-md py-0 my-0">{item.title}</h2>
+          <h3 className="text-slate-700 text-sm">{item.desc}</h3>
+        </div>
+        <hr />
+        <div className="leading-8 detail pt-1 pb-1 px-3">
+          <div className="flex">
+            <img src="./img/star.png" className="mt-2 mr-1" alt="" />
             <span>
               {!isNaN(item.totalStars / item.starNumber) &&
                 Math.round(item.totalStars / item.starNumber)}
             </span>
           </div>
-        </div>
-        <hr />
-        <div className="detail pt-1 px-3">
-          <img src="./img/heart.png" alt="" />
           <div className="price">
             <span>Price</span>
             <h2 className="inline">
