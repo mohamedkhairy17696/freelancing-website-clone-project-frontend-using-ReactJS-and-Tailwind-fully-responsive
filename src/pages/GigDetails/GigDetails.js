@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Slider } from "infinite-react-carousel/lib";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
 import Reviews from "../../components/Reviews/Reviews";
@@ -45,9 +45,7 @@ const Gig = () => {
   return (
     <div className="gig">
       {isPending && <Spinner />}
-      {error && (
-        <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
-      )}
+      {error && <div>Something wrong in fetching data{error.message}</div>}
       <div className="container mx-6 my-6 lg:mx-20 lg:my-20">
         <p className="text-lg font-semibold mb-5">
           Frellancer / Graphics & Design
@@ -124,13 +122,14 @@ const Gig = () => {
                   <span>{gig.feature4}</span>
                 </div>
               </div>
-
-              <button
-                type="button"
-                className="w-96 mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-              >
-                Continue
-              </button>
+              <Link to={`/pay/${id}`}>
+                <button
+                  type="button"
+                  className="w-96 mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                >
+                  Continue
+                </button>
+              </Link>
             </div>
           </div>
         </div>

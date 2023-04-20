@@ -1,18 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Messages.scss";
+import newRequest from "../../utils/newRequest";
+import moment from "moment";
+import { QueryClient, useMutation } from "@tanstack/react-query";
+
 const Messages = () => {
-  const currentUser = {
-    id: 1,
-    username: "Anna",
-    isSeller: true,
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const [data, setData] = useState([]);
+  const [isPending, setIsPending] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    newRequest
+      .get("/conversations")
+      .then((res) => {
+        setData(res.data);
+        setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(true);
+        setError(err.message);
+        console.log(err);
+      });
+  }, [data]);
+
+  const handleRead = (id) => {
+    setIsPending(true);
+    newRequest
+      .put(`/conversations/${id}`, {
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(),
+      })
+      .then(() => {
+        setIsPending(false);
+        setError(null);
+      })
+      .catch((err) => {
+        setIsPending(true);
+        setError(err.message);
+        console.log(err);
+      });
   };
 
-  const message = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident
-  maxime cum corporis esse aspernatur laborum dolorum? Animi
-  molestias aliquam, cum nesciunt, aut, ut quam vitae saepe repellat
-  nobis praesentium placeat.`;
+  // const mutation = useMutation({
+  //   mutationFn: (id) => {
+  //     return newRequest.put(`/conversations/${id}`);
+  //   },
+  //   onSuccess: () => {
+  //     QueryClient.invalidateQueries(["conversations"]);
+  //   },
+  // });
 
+  // const handleRead = (id) => {
+  //   mutation.mutate(id);
+  // };
   return (
     <div className="messages mx-3">
       <div className="container">
@@ -26,54 +69,30 @@ const Messages = () => {
             <th>Date</th>
             <th>Action</th>
           </tr>
-          <tr className="active">
-            <td>Mohamed</td>
-            <td>
-              <Link to="/message/123" className="link">
-                {message.substring(0, 100)}...
-              </Link>
-            </td>
-            <td>1 hour ago</td>
-            <td>
-              <button>Mark as Read</button>
-            </td>
-          </tr>
-          <tr className="active">
-            <td>Ahmed</td>
-
-            <td>
-              <Link to="/message/123" className="link hover:text-slate-600">
-                {message.substring(0, 100)}...
-              </Link>
-            </td>
-            <td>2 hours ago</td>
-            <td>
-              <button>Mark as Read</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Ahmed</td>
-            <td>
-              <Link to="/message/123" className="link">
-                {message.substring(0, 100)}...
-              </Link>
-            </td>
-            <td>1 day ago</td>
-          </tr>
-          <tr>
-            <td>Mostafa</td>
-            <td>
-              <Link to="/message/123" className="link">
-                {message.substring(0, 100)}...
-              </Link>
-            </td>
-            <td>2 days ago</td>
-          </tr>
-          <tr>
-            <td>Mohamed</td>
-            <td>{message.substring(0, 100)}</td>
-            <td>1 week ago</td>
-          </tr>
+          {data.map((c) => (
+            <tr
+              className={
+                ((currentUser.isSeller && !c.readBySeller) ||
+                  (!currentUser.isSeller && !c.readByBuyer)) &&
+                "active"
+              }
+              key={c.id}
+            >
+              <td>{currentUser.isSeller ? c.buyerId : c.sellerId}</td>
+              <td>
+                <Link to={`/message/${c.id}`} className="link">
+                  {c?.lastMessage?.substring(0, 100)}...
+                </Link>
+              </td>
+              <td>{moment(c.updatedAt).fromNow()}</td>
+              <td>
+                {((currentUser.isSeller && !c.readBySeller) ||
+                  (!currentUser.isSeller && !c.readByBuyer)) && (
+                  <button onClick={() => handleRead(c.id)}>Mark as Read</button>
+                )}
+              </td>
+            </tr>
+          ))}
         </table>
       </div>
     </div>
