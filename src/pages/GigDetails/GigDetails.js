@@ -5,6 +5,7 @@ import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
 import Reviews from "../../components/Reviews/Reviews";
 const Gig = () => {
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const { id } = useParams();
   const [gig, setGig] = useState([]);
   const [userData, setUserData] = useState([]);
@@ -122,14 +123,16 @@ const Gig = () => {
                   <span>{gig.feature4}</span>
                 </div>
               </div>
-              <Link to={`/pay/${id}`}>
-                <button
-                  type="button"
-                  className="w-96 mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                >
-                  Continue
-                </button>
-              </Link>
+              {!currentUser?.isSeller && (
+                <Link to={`/pay/${id}`}>
+                  <button
+                    type="button"
+                    className="w-96 mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                  >
+                    Continue
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

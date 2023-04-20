@@ -38,9 +38,7 @@ const Orders = () => {
             {<th>{currentUser.isSeller ? "Buyer" : "Seller"}</th>}
             <th>Contact</th>
           </tr>
-          {error && (
-            <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
-          )}{" "}
+
           {isPending && <Spinner />}
           {orders.map((order) => (
             <tr key={order._id}>
