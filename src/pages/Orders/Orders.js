@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Orders.scss";
 import Spinner from "../../components/Spinner/Spinner";
 import newRequest from "../../utils/newRequest";
-import { useNavigate } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
+
 const Orders = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const [orders, setOrders] = useState([]);
