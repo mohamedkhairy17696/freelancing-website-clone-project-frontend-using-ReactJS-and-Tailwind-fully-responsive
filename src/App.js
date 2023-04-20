@@ -80,16 +80,16 @@ function App() {
       element: <Login />,
     },
     {
-      path: "/notfound",
-      element: <NotFound />,
-    },
-    {
       path: "/pay/:id",
       element: <Pay />,
     },
     {
       path: "/success",
       element: <Success />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
     },
   ]);
 
