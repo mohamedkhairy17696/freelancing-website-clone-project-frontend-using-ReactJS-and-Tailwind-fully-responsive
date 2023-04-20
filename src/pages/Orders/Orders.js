@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Orders.scss";
 import Spinner from "../../components/Spinner/Spinner";
 import newRequest from "../../utils/newRequest";
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 const Orders = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const [orders, setOrders] = useState([]);
@@ -22,6 +24,7 @@ const Orders = () => {
         console.log(err);
       });
   }, [orders]);
+
   return (
     <div className="orders">
       <div className="container">
@@ -36,10 +39,10 @@ const Orders = () => {
             {<th>{currentUser.isSeller ? "Buyer" : "Seller"}</th>}
             <th>Contact</th>
           </tr>
-          {isPending && <Spinner />}
           {error && (
             <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
           )}{" "}
+          {isPending && <Spinner />}
           {orders.map((order) => (
             <tr key={order._id}>
               <td>
