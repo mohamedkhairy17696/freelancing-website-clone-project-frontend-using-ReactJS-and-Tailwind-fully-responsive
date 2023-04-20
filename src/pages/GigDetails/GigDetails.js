@@ -47,7 +47,7 @@ const Gig = () => {
     <div className="gig">
       {isPending && <Spinner />}
       {error && <div>Something wrong in fetching data{error.message}</div>}
-      <div className="container mx-6 my-6 lg:mx-20 lg:my-20">
+      <div className="container ml-2 mr-8 my-6 lg:mx-20 lg:my-20">
         <p className="text-lg font-semibold mb-5">
           Frellancer / Graphics & Design
         </p>
@@ -55,7 +55,7 @@ const Gig = () => {
         <div className="flex mt-5">
           <img
             className="w-12 h-12 rounded-full"
-            src={userData.img}
+            src={userData.img || "/img/noavatar.jpg"}
             alt="Rounded avatar"
           />
           <p className="mt-2.5 mx-3">{userData.username}</p>
@@ -197,7 +197,7 @@ const Gig = () => {
               </div>
             </div>
             <hr className="my-6" />
-            {userData.desc && <p>{userData.desc}</p>}
+            {userData.desc === false ? <p></p> : <p>{userData.desc}</p>}
           </div>
         </div>
         <Reviews gigId={id} />
