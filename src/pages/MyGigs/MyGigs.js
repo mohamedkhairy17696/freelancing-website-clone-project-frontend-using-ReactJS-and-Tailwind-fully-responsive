@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./MyGigs.scss";
 import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
 const MyGigs = () => {

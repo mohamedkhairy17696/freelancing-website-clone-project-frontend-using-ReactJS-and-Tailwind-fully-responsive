@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Orders.scss";
 import Spinner from "../../components/Spinner/Spinner";
 import newRequest from "../../utils/newRequest";
 

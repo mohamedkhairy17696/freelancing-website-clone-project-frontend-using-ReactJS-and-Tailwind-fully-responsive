@@ -4,7 +4,6 @@ import TrustedBy from "../../components/TrustedBy/TrustedBy";
 import Slide from "../../components/Slide/Slide";
 import { projects } from "../../data";
 import CatCard from "../../components/CatCard/CatCard";
-import "./Home.scss";
 import Features from "../../components/Features/Features";
 import Explore from "../../components/Explore/Explore";
 import FeaturesDark from "../../components/FeaturesDark/FeaturesDark";

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import { useReducer } from "react";
 import { INITIAL_STATE, gigReducer } from "../../reducers/GigReducer";
-import { set } from "date-fns";
 import Spinner from "../../components/Spinner/Spinner";
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
