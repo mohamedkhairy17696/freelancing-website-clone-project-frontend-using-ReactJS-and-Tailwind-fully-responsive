@@ -25,31 +25,43 @@ const Orders = () => {
   }, [orders]);
 
   return (
-    <div className="orders">
-      <div className="container">
-        <div className="title">
-          <h1 className="text-xl font-bold">Orders</h1>
-        </div>
-        <table>
+    <div className="my-20 mx-3">
+      <div className="mb-8">
+        <h1 className="text-xl font-bold">Orders</h1>
+      </div>
+      <div className="container relative overflow-x-auto shadow-md sm:rounded-lg p-8">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <tr>
-            <th>Image</th>
-            <th>Title</th>
-            <th>Price</th>
-            {<th>{currentUser.isSeller ? "Buyer" : "Seller"}</th>}
-            <th>Contact</th>
+            <th scope="col" className="px-6 py-3">
+              Image
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Title
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Price
+            </th>
+            {
+              <th scope="col" className="px-6 py-3">
+                {currentUser.isSeller ? "Buyer" : "Seller"}
+              </th>
+            }
+            <th scope="col" className="px-6 py-3">
+              Contact
+            </th>
           </tr>
 
           {isPending && <Spinner />}
           {orders.map((order) => (
             <tr key={order._id}>
-              <td>
-                <img className="image" src={order.img} alt="" />
+              <td className="px-6 py-4">
+                <img className="w-16" src={order.img} alt="" />
               </td>
-              <td>{order.title}</td>
-              <td>{order.price}</td>
-              <td>wait wait ...</td>
-              <td>
-                <img className="message" src="./img/message.png" alt="" />
+              <td className="px-6 py-4">{order.title}</td>
+              <td className="px-6 py-4">{order.price}</td>
+              <td className="px-6 py-4">wait wait ...</td>
+              <td className="px-6 py-4">
+                <img className="w-8" src="./img/message.png" alt="" />
               </td>
             </tr>
           ))}

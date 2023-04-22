@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import upload from "../../utils/upload";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -13,6 +14,7 @@ const Register = () => {
     isSeller: false,
     desc: false,
   });
+  const [isPending, setIsPending] = useState(false);
 
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
@@ -31,13 +33,18 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsPending(true);
 
     const url = await upload(file);
     try {
-      await newRequest.post("/auth/register", {
-        ...user,
-        img: url,
-      });
+      await newRequest
+        .post("/auth/register", {
+          ...user,
+          img: url,
+        })
+        .then(() => {
+          setIsPending(false);
+        });
       navigate("/login");
     } catch (err) {
       console.log(err);
@@ -51,6 +58,7 @@ const Register = () => {
             <h1 className="text-xl font-medium leading-tight tracking-tight text-slate-800 md:text-2xl dark:text-white">
               Create an account
             </h1>
+            {isPending && <Spinner />}
             <form
               onSubmit={handleSubmit}
               className="space-y-4 md:space-y-6"

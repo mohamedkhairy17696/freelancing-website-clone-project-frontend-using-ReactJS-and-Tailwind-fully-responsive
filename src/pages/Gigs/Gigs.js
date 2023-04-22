@@ -19,7 +19,7 @@ const Gigs = () => {
   useEffect(() => {
     newRequest
       .get(
-        `/gigs/?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}&catId=${catTitle}`
+        `/gigs/?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
       )
       .then((res) => {
         setData(res.data);
