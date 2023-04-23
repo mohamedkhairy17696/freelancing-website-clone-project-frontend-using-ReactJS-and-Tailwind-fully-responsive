@@ -41,13 +41,16 @@ const Features = () => {
           </p>
         </div>
         <div className="item">
-          <video
+          <iframe
+            width="900"
+            height="506"
             className="w-full text-center"
-            autoplay
-            muted
-            controls
-            src="./img/video.mp4"
-          />
+            src="https://www.youtube.com/embed/mW7CvqfHj0I"
+            title="A whole world of freelance talent at your fingertips ! (voice over)"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>
