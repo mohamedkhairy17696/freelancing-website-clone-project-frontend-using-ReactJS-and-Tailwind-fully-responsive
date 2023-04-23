@@ -22,9 +22,9 @@ const Navbar = () => {
     }
   };
   const navigation = [
-    { name: "Freelancer Business", href: "/", current: false },
-    { name: "Explore", href: "/", current: false },
-    { name: "English", href: "/", current: false },
+    // { name: "Freelancer Business", href: "/", current: false },
+    { name: "Explore Services", href: "/gigs", current: false },
+    // { name: "English", href: "/", current: false },
     // { name: "SignIn", href: "/", current: false },
   ];
 
