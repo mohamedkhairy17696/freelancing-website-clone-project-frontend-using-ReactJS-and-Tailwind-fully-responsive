@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Slider } from "infinite-react-carousel/lib";
 import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
 import Reviews from "../../components/Reviews/Reviews";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 const Gig = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const { id } = useParams();
@@ -47,7 +48,7 @@ const Gig = () => {
     <div className="gig">
       {isPending && <Spinner />}
       {error && <div>Something wrong in fetching data{error.message}</div>}
-      <div className="container ml-2 mr-8 my-6 lg:mx-20 lg:my-20">
+      <div className="container ml-2 mr-8 my-6 md:mx-20 lg:my-20">
         <p className="text-lg font-semibold mb-5">
           Frellancer / Graphics & Design
         </p>
@@ -79,13 +80,19 @@ const Gig = () => {
         </div>
 
         <div class="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2 justify-center	items-center">
-          <div className="mt-12 mr-12">
-            <Slider slidesToShow={1} arrowsScroll={1} className="slider">
-              <img className="rounded" src={gig.imageSlide1} alt="" />
-              <img className="rounded" src={gig.imageSlide2} alt="" />
-              <img className="rounded" src={gig.imageSlide3} alt="" />
-            </Slider>
-            <h2 className="text-2xl font-medium	 mt-6">About This Gig</h2>
+          <div className="mt-0 mr-12">
+            <Carousel showArrows={false} showStatus={false}>
+              <div>
+                <img className="rounded" src={gig.imageSlide1} alt="" />
+              </div>
+              <div>
+                <img className="rounded" src={gig.imageSlide2} alt="" />
+              </div>
+              <div>
+                <img className="rounded" src={gig.imageSlide3} alt="" />
+              </div>
+            </Carousel>
+            <h2 className="text-2xl font-medium	 mt-12">About This Gig</h2>
             <p className="mt-3">{gig.desc}</p>
           </div>
           <div className=" items-start content-start">

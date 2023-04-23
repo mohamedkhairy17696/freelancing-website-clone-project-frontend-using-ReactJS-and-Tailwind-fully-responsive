@@ -24,7 +24,7 @@ const Orders = () => {
   }, [orders]);
 
   return (
-    <div className="my-20 mx-3">
+    <div className="my-20 mx-6">
       <div className="mb-8">
         <h1 className="text-xl font-bold">Orders</h1>
       </div>

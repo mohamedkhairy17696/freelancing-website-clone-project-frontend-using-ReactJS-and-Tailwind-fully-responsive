@@ -30,7 +30,7 @@ const Slide = ({ children }) => {
         <h1 className="mb-6 text-3xl font-bold">
           Popular professional services
         </h1>
-        <Carousel responsive={responsive}>{children}</Carousel>
+        z<Carousel responsive={responsive}>{children}</Carousel>
       </div>
     </div>
   );
