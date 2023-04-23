@@ -42,15 +42,13 @@ const Gigs = () => {
   };
   return (
     <div className="gigs">
-      <div className="container mx-12">
-        <span className="text-slate-800 font-semibold">Freelancer</span>
-        <h1 className="font-bold">Services and Gigs</h1>
-        <div className="text-slate-800">
-          Explore the boundaries of art and technology with Fiverr's AI artists
-        </div>
+      <div className="container mx-6 md:mx-12">
+        <span className="text-slate-700 font-semibold">
+          Explore Services That You Needed
+        </span>
         <div className="menu flex md:flex-1">
           <div className="left flex md:flex-1">
-            <div className="text-slate-800 font-bold">Budget</div>
+            <div className="text-slate-700 font-medium">Budget</div>
             <input
               className="my-2 block"
               ref={minRef}
@@ -63,14 +61,8 @@ const Gigs = () => {
               type="number"
               placeholder="max"
             />
-            <button
-              className="bg-emerald-500 hover:bg-emerald-600 text-slate-100 font-md py-2 px-4 rounded my-5"
-              onClick={apply}
-            >
-              Apply
-            </button>
           </div>
-          <div className="right ">
+          <div className="block">
             <label
               for="filter"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

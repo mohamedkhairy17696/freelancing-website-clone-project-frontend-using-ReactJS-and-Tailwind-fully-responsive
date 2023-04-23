@@ -24,7 +24,7 @@ const Orders = () => {
   }, [orders]);
 
   return (
-    <div className="my-20 mx-6">
+    <div className="my-20 mx-6 lg:mx-12">
       <div className="mb-8">
         <h1 className="text-xl font-bold">Orders</h1>
       </div>
@@ -49,7 +49,6 @@ const Orders = () => {
               Contact
             </th>
           </tr>
-
           {isPending && <Spinner />}
           {orders.map((order) => (
             <tr key={order._id}>

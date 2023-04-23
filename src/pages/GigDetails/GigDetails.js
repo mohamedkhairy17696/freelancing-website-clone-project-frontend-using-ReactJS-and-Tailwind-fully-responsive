@@ -48,7 +48,7 @@ const Gig = () => {
     <div className="gig">
       {isPending && <Spinner />}
       {error && <div>Something wrong in fetching data{error.message}</div>}
-      <div className="container ml-2 mr-8 my-6 md:mx-20 lg:my-20">
+      <div className="container my-6 mx-6 md:mx-20 lg:my-20">
         <p className="text-lg font-semibold mb-5">
           Frellancer / Graphics & Design
         </p>
