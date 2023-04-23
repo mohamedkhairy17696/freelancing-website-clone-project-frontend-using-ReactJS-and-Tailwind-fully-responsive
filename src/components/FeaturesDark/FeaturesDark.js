@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FeaturesDark = () => {
   return (
     <div className="bg-indigo-950">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-20 py-20 justify-center items-center">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-6 md:mx-20 py-20 justify-center items-center">
         <div className="item">
           <h1 className="text-3xl text-slate-100 font-medium mb-3 text-slate-50">
             Freelancer business.
@@ -32,9 +33,11 @@ const FeaturesDark = () => {
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             Manage teamwork and boost productivity with one powerful workspace
           </div>
-          <button class="bg-emerald-500 hover:bg-emerald-600 text-slate-100 font-md py-2 px-4 rounded my-5">
-            Explore Freelancer Business
-          </button>
+          <Link to={`/gigs`}>
+            <button class="bg-emerald-500 hover:bg-emerald-600 text-slate-100 font-md py-2 px-4 rounded my-5">
+              Explore Freelancing Business
+            </button>
+          </Link>
         </div>
         <div>
           <img
