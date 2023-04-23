@@ -14,7 +14,10 @@ const Add = () => {
   const handleChange = (e) => {
     dispatch({
       type: "CHANGE_INPUT",
-      payload: { name: e.target.name, value: e.target.value },
+      payload: {
+        name: e.target.name,
+        value: e.target.value,
+      },
     });
   };
 
