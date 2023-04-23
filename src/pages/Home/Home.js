@@ -7,8 +7,6 @@ import CatCard from "../../components/CatCard/CatCard";
 import Features from "../../components/Features/Features";
 import Explore from "../../components/Explore/Explore";
 import FeaturesDark from "../../components/FeaturesDark/FeaturesDark";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import SlideForProjectCard from "../../components/SlideForProjectCard/SlideForProjectCard";
 import { useState } from "react";
 import { useEffect } from "react";
 import newRequest from "../../utils/newRequest";
@@ -44,11 +42,6 @@ const Home = () => {
       <Features />
       <Explore />
       <FeaturesDark />
-      <SlideForProjectCard slidesToShow={4} arrowsScroll={4}>
-        {projects.map((card) => (
-          <ProjectCard key={card.id} card={card} />
-        ))}
-      </SlideForProjectCard>
     </div>
   );
 };
