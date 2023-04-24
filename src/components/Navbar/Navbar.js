@@ -22,7 +22,7 @@ const Navbar = () => {
     }
   };
   const navigation = [
-    // { name: "Freelancer Business", href: "/", current: false },
+    { name: "Home", href: "/", current: false },
     { name: "Explore Services", href: "/gigs", current: false },
     // { name: "English", href: "/", current: false },
     // { name: "SignIn", href: "/", current: false },

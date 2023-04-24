@@ -53,11 +53,11 @@ const Orders = () => {
           {orders.map((order) => (
             <tr key={order._id}>
               <td className="px-6 py-4">
-                <img className="w-16" src={order.img} alt="" />
+                <img className="w-16 rounded" src={order.img} alt="" />
               </td>
               <td className="px-6 py-4">{order.title}</td>
               <td className="px-6 py-4">{order.price}</td>
-              <td className="px-6 py-4">wait wait ...</td>
+              <td className="px-6 py-4">wait</td>
               <td className="px-6 py-4">
                 <img className="w-8" src="./img/message.png" alt="" />
               </td>

@@ -68,7 +68,7 @@ const MyGigs = () => {
           {gigs.map((gig) => (
             <tr key={gig._id}>
               <td className="px-6 py-4">
-                <img className="w-16" src={gig.cover} alt="" />
+                <img className="w-16 rounded" src={gig.cover} alt="" />
               </td>
               <td className="px-6 py-4">{gig.title}</td>
               <td className="px-6 py-4">{gig.price}</td>
