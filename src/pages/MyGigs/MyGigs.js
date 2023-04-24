@@ -82,15 +82,6 @@ const MyGigs = () => {
                   Delete
                 </a>
               </td>
-              {/*<td>
-                <button
-                  type="button"
-                  onClick={() => handleDelete(gig._id)}
-                  class="focus:outline-none text-white bg-red-600 hover:bg-red-700 font-medium rounded-lg text-sm px-5 py-1 mr-1 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-                >
-                  Delete
-                </button>
-          </td>*/}
             </tr>
           ))}
         </table>

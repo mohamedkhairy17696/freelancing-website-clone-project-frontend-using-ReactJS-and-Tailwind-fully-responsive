@@ -37,9 +37,6 @@ const Gigs = () => {
     setSort(type);
   };
 
-  const apply = () => {
-    setData(data);
-  };
   return (
     <div className="gigs">
       <div className="container mx-6 md:mx-12">

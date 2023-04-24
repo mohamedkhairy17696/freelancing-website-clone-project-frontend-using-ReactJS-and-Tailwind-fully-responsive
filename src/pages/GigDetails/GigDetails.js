@@ -93,7 +93,7 @@ const Gig = () => {
             <h2 className="text-2xl font-medium	 mt-12">About This Gig</h2>
             <p className="mt-3">{gig.desc}</p>
           </div>
-          <div className=" items-start content-start">
+          <div className="items-start content-start">
             <div class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="flex justify-between">
                 <h3>{gig.shortTitle}</h3>

@@ -98,7 +98,7 @@ const Add = () => {
                 <option value="music">Music</option>
               </select>
             </div>
-            <div>
+            <div className="max-w my-6 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <div className="mt-6">
                 <label
                   htmlFor="file"
