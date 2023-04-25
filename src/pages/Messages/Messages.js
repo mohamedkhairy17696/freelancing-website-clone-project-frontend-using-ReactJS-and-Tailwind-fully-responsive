@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Messages.scss";
 import newRequest from "../../utils/newRequest";
 import moment from "moment";
 import { QueryClient, useMutation } from "@tanstack/react-query";
@@ -57,38 +56,53 @@ const Messages = () => {
   //   mutation.mutate(id);
   // };
   return (
-    <div className="messages mx-3">
-      <div className="container">
-        <div className="title">
-          <h1 className="text-xl font-bold">Messages</h1>
-        </div>
-        <table>
+    <div className="my-20 mx-6 lg:mx-12">
+      <div className="mb-8">
+        <h1 className="text-xl text-slate-700 font-bold">Messages</h1>
+      </div>
+      <div className="container relative overflow-x-auto shadow-md sm:rounded-lg p-8">
+        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <tr>
-            <th>{currentUser.isSeller ? "Buyer" : "Seller"}</th>
-            <th>Last Message</th>
-            <th>Date</th>
-            <th>Action</th>
+            <th scope="col" className="px-6 py-3">
+              {currentUser.isSeller ? "Buyer" : "Seller"}
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Last Message
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Date
+            </th>
+            <th scope="col" className="px-6 py-3">
+              Action
+            </th>
           </tr>
-          {data.map((c) => (
+          {data.map((conv) => (
             <tr
               className={
-                ((currentUser.isSeller && !c.readBySeller) ||
-                  (!currentUser.isSeller && !c.readByBuyer)) &&
-                "active"
+                ((currentUser.isSeller && !conv.readBySeller) ||
+                  (!currentUser.isSeller && !conv.readByBuyer)) &&
+                "bg-emerald-50"
               }
-              key={c.id}
+              key={conv.id}
             >
-              <td>{currentUser.isSeller ? c.buyerId : c.sellerId}</td>
-              <td>
-                <Link to={`/message/${c.id}`} className="link">
-                  {c?.lastMessage?.substring(0, 100)}...
+              <td className="px-6 py-4">
+                {currentUser.isSeller ? conv.buyerId : conv.sellerId}
+              </td>
+              <td className="px-6 py-4">
+                <Link to={`/message/${conv.id}`} className="link">
+                  {conv?.lastMessage?.substring(0, 100)}...
                 </Link>
               </td>
-              <td>{moment(c.updatedAt).fromNow()}</td>
-              <td>
-                {((currentUser.isSeller && !c.readBySeller) ||
-                  (!currentUser.isSeller && !c.readByBuyer)) && (
-                  <button onClick={() => handleRead(c.id)}>Mark as Read</button>
+              <td className="px-6 py-4">{moment(conv.updatedAt).fromNow()}</td>
+              <td className="px-6 py-4">
+                {((currentUser.isSeller && !conv.readBySeller) ||
+                  (!currentUser.isSeller && !conv.readByBuyer)) && (
+                  <button
+                    class="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                    onClick={() => handleRead(conv.id)}
+                  >
+                    Mark as Read
+                  </button>
                 )}
               </td>
             </tr>

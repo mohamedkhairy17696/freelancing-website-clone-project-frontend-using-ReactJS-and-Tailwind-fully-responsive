@@ -92,10 +92,10 @@ const Add = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option selected>Choose a category</option>
-                <option value="design">Design</option>
-                <option value="web">Web Development</option>
-                <option value="animation">Animation</option>
-                <option value="music">Music</option>
+                <option value="Design">Design</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Animation">Animation</option>
+                <option value="Music">Music</option>
               </select>
             </div>
             <div className="max-w my-6 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

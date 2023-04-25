@@ -5,6 +5,7 @@ import Spinner from "../../components/Spinner/Spinner";
 import Reviews from "../../components/Reviews/Reviews";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import moment from "moment";
 const Gig = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const { id } = useParams();
@@ -181,9 +182,9 @@ const Gig = () => {
                   </h3>
                 </div>
                 <div className="my-3">
-                  <p>Member since</p>
+                  <p>Member Since</p>
                   <h3 className="mt-1 text-xl font-medium	">
-                    {userData.createdAt}
+                    {moment(userData.createdAt).fromNow()}
                   </h3>
                 </div>
                 <div className="my-3">
@@ -193,8 +194,16 @@ const Gig = () => {
               </div>
               <div>
                 <div className="my-3">
-                  <p>Avg. response time</p>
-                  <h3 className="mt-1 text-xl font-medium	">4 Hours</h3>
+                  <p>Number Of Revisions</p>
+                  <h3 className="mt-1 text-xl font-medium	">
+                    {gig.deliveryTime} days
+                  </h3>
+                </div>
+                <div className="my-3">
+                  <p>Delivery time</p>
+                  <h3 className="mt-1 text-xl font-medium	">
+                    {gig.revisionNumber} Times
+                  </h3>
                 </div>
               </div>
             </div>
