@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import moment from "moment";
-import { QueryClient, useMutation } from "@tanstack/react-query";
 
 const Messages = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -43,18 +42,6 @@ const Messages = () => {
       });
   };
 
-  // const mutation = useMutation({
-  //   mutationFn: (id) => {
-  //     return newRequest.put(`/conversations/${id}`);
-  //   },
-  //   onSuccess: () => {
-  //     QueryClient.invalidateQueries(["conversations"]);
-  //   },
-  // });
-
-  // const handleRead = (id) => {
-  //   mutation.mutate(id);
-  // };
   return (
     <div className="my-20 mx-6 lg:mx-12">
       <div className="mb-8">
