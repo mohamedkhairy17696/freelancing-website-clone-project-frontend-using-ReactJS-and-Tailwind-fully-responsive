@@ -71,8 +71,11 @@ const Messages = () => {
               }
               key={conv.id}
             >
-              <td className="px-6 py-4 underline text-blue-600 hover:text-blue-700">
-                <Link to={`/message/${conv.id}`} className="link">
+              <td className="px-6 py-4z">
+                <Link
+                  to={`/message/${conv.id}`}
+                  className="underline text-blue-600	text-blue-700"
+                >
                   {conv?.lastMessage?.substring(0, 100)}...
                 </Link>
               </td>
@@ -87,7 +90,7 @@ const Messages = () => {
                     Mark as Read
                   </button>
                 ) : (
-                  <div>Read message</div>
+                  <div>Read Message</div>
                 )}
               </td>
             </tr>
