@@ -38,7 +38,12 @@ const Message = () => {
     <div className="message">
       <div className="container">
         <span className="breadcrumbs">
-          <Link to="/messages">Messages</Link>
+          <Link
+            className="text-blue-600 hover:text-blue-700 text-lg underline"
+            to="/messages"
+          >
+            Messages
+          </Link>
         </span>
         {isLoading ? (
           "loading"

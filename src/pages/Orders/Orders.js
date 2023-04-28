@@ -48,25 +48,22 @@ const Orders = () => {
       </div>
       <div className="container relative overflow-x-auto shadow-md sm:rounded-lg p-8">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-          <tr>
-            <th scope="col" className="px-6 py-3">
-              Image
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Title
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Price
-            </th>
-            {
+          <thead>
+            <tr>
               <th scope="col" className="px-6 py-3">
-                {currentUser.isSeller ? "Buyer" : "Seller"}
+                Image
               </th>
-            }
-            <th scope="col" className="px-6 py-3">
-              Contact
-            </th>
-          </tr>
+              <th scope="col" className="px-6 py-3">
+                Title
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Price
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Contact
+              </th>
+            </tr>
+          </thead>
           {isPending && <Spinner />}
           {orders.map((order) => (
             <tr key={order._id}>
@@ -75,14 +72,16 @@ const Orders = () => {
               </td>
               <td className="px-6 py-4">{order.title}</td>
               <td className="px-6 py-4">{order.price}</td>
-              <td className="px-6 py-4">wait</td>
               <td className="px-6 py-4">
-                <img
-                  className="w-8"
-                  src="./img/message.png"
-                  alt=""
+                <button
                   onClick={() => handleContact(order)}
-                />
+                  type="button"
+                  class="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                >
+                  {currentUser.isSeller
+                    ? "Contact With Buyer"
+                    : "Contact With Seller"}
+                </button>
               </td>
             </tr>
           ))}
