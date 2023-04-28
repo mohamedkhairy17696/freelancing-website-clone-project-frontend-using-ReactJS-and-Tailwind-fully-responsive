@@ -93,6 +93,13 @@ const Gigs = () => {
               type="number"
               placeholder="max"
             />
+            <button
+              onClick={apply}
+              type="submit"
+              class="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+            >
+              Search
+            </button>
           </div>
           <div className="block">
             <label

@@ -40,7 +40,7 @@ const GigCard = ({ item }) => {
             </div>
           )}
           <h2 className="text-slate-700 text-md py-0 my-0">{item.title}</h2>
-          <h3 className="text-slate-700 text-sm">{item.desc}</h3>
+          <h3 className="text-slate-700 text-sm">{item.shortDesc}</h3>
         </div>
         <hr />
         <div className="leading-8 detail pt-1 pb-1 px-3">

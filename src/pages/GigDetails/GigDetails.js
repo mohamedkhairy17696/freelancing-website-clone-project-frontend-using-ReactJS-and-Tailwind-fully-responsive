@@ -208,7 +208,7 @@ const Gig = () => {
               </div>
             </div>
             <hr className="my-6" />
-            {userData.desc === false ? <p></p> : <p>{userData.desc}</p>}
+            <p>{userData.desc}</p>
           </div>
         </div>
         <Reviews gigId={id} />
