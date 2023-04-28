@@ -28,6 +28,7 @@ function App() {
           {" "}
           <div className="fixed top-0 z-10 w-full">
             <Nav />
+            <hr class="h-px bg-gray-100 border-0 dark:bg-gray-700" />
             <Navbar />
           </div>
           <Outlet />
