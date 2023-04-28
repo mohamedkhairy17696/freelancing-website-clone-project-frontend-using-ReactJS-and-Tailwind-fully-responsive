@@ -64,7 +64,6 @@ const Orders = () => {
               </th>
             </tr>
           </thead>
-          {isPending && <Spinner />}
           {orders.map((order) => (
             <tr key={order._id}>
               <td className="px-6 py-4">
