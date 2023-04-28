@@ -35,7 +35,7 @@ const Message = () => {
     e.target[0].value = "";
   };
   return (
-    <div className="message">
+    <div className="message pt-14">
       <div className="container">
         <span className="breadcrumbs">
           <Link

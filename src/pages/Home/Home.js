@@ -1,9 +1,6 @@
 import React from "react";
 import Hero from "../../components/Hero/Hero";
 import TrustedBy from "../../components/TrustedBy/TrustedBy";
-import Slide from "../../components/Slide/Slide";
-import { projects } from "../../data";
-import CatCard from "../../components/CatCard/CatCard";
 import Features from "../../components/Features/Features";
 import Explore from "../../components/Explore/Explore";
 import FeaturesDark from "../../components/FeaturesDark/FeaturesDark";
@@ -34,11 +31,6 @@ const Home = () => {
     <div className="home">
       <Hero />
       <TrustedBy />
-      <Slide>
-        {cats.map((cat) => (
-          <CatCard key={cat._id} cat={cat} />
-        ))}
-      </Slide>
       <Features />
       <Explore />
       <FeaturesDark />

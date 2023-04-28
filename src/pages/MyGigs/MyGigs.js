@@ -29,7 +29,7 @@ const MyGigs = () => {
   };
 
   return (
-    <div className="my-20 mx-6 lg:mx-12">
+    <div className="my-20 mx-6 lg:mx-12 pt-14">
       <div className="flex justify-between mb-8">
         <h1 className="text-xl font-bold">
           {currentUser.isSeller ? "My Gigs" : "Orders"}

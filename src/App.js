@@ -16,6 +16,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Pay from "./pages/Pay/Pay";
 import Success from "./pages/Success/Success";
+import Nav from "./components/Nav/Nav";
 function App() {
   const queryClient = new QueryClient();
 
@@ -24,7 +25,11 @@ function App() {
       <div className="app">
         {" "}
         <QueryClientProvider client={queryClient}>
-          <Navbar />
+          {" "}
+          <div className="fixed top-0 z-10 w-full">
+            <Nav />
+            <Navbar />
+          </div>
           <Outlet />
           <Footer />
         </QueryClientProvider>

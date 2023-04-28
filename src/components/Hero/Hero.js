@@ -4,12 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 const Hero = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
+
   const handleSubmit = () => {
-    navigate(`gigs?search=${input}`);
+    navigate(`/gigs?search=${input}`);
   };
   return (
     <div>
-      <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left">
+      <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left mt-20">
         <div className="container mx-auto xl:px-32">
           <div className="grid lg:grid-cols-2 gap-12 flex items-center">
             <div className="mt-12 lg:mt-0">

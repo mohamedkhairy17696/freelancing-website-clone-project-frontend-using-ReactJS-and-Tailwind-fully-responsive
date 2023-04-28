@@ -5,41 +5,75 @@ import GigCard from "../../components/GigCard/GigCard";
 import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
 import { useLocation, useParams } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 const Gigs = () => {
+  // const minRef = useRef();
+  // const maxRef = useRef();
+  // const [data, setData] = useState([]);
+  // const [isPending, setIsPending] = useState(true);
+  // const [error, setError] = useState(null);
+  // const [sort, setSort] = useState("sales");
+  // const [cat, setCat] = useState("");
+  // const { search } = useLocation();
+  // const { catTitle } = useParams();
+
+  // useEffect(() => {
+  //   newRequest
+  //     .get(
+  //       `/gigs/?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+  //     )
+  //     .then((res) => {
+  //       setData(res.data);
+  //       setIsPending(false);
+  //       setError(null);
+  //     })
+  //     .catch((err) => {
+  //       setIsPending(true);
+  //       setError(err.message);
+  //       console.log(err);
+  //     });
+  // }, [data, sort, search, cat]);
+
+  // const reSort = (type) => {
+  //   setSort(type);
+  // };
+
+  const [sort, setSort] = useState("sales");
+  const [open, setOpen] = useState(false);
   const minRef = useRef();
   const maxRef = useRef();
-  const [data, setData] = useState([]);
-  const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
-  const [sort, setSort] = useState("sales");
-  const [cat, setCat] = useState("");
-  const { search } = useLocation();
-  const { catTitle } = useParams();
 
-  useEffect(() => {
-    newRequest
-      .get(
-        `/gigs/?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
-      )
-      .then((res) => {
-        setData(res.data);
-        setIsPending(false);
-        setError(null);
-      })
-      .catch((err) => {
-        setIsPending(true);
-        setError(err.message);
-        console.log(err);
-      });
-  }, [data, sort, search, cat]);
+  const { search } = useLocation();
+
+  const { isLoading, error, data, refetch } = useQuery({
+    queryKey: ["gigs"],
+    queryFn: () =>
+      newRequest
+        .get(
+          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+        )
+        .then((res) => {
+          return res.data;
+        }),
+  });
+
+  console.log(data);
 
   const reSort = (type) => {
     setSort(type);
+    setOpen(false);
   };
 
+  useEffect(() => {
+    refetch();
+  }, [refetch]);
+
+  const apply = () => {
+    refetch();
+  };
   return (
-    <div className="gigs">
+    <div className="gigs mt-24">
       <div className="container mx-6 md:mx-12">
         <span className="text-slate-700 font-semibold">
           Explore Services That You Needed
@@ -83,7 +117,7 @@ const Gigs = () => {
             </select>
           </div>
         </div>
-        <div className="cards">
+        {/*<div className="cards">
           {isPending && <Spinner />}
           {error && (
             <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
@@ -91,6 +125,13 @@ const Gigs = () => {
           {data.map((gig) => (
             <GigCard key={gig._id} item={gig} />
           ))}
+          </div>*/}
+        <div className="cards">
+          {isLoading
+            ? "loading"
+            : error
+            ? "Something went wrong!"
+            : data.map((gig) => <GigCard key={gig._id} item={gig} />)}
         </div>
       </div>
     </div>

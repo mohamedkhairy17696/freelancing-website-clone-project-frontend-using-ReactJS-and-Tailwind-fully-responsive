@@ -46,13 +46,13 @@ const Gig = () => {
   }, [userId]);
 
   return (
-    <div className="gig">
+    <div className="gig pt-14">
       {isPending && <Spinner />}
       {error && <div>Something wrong in fetching data{error.message}</div>}
       <div className="container my-6 mx-6 md:mx-20 lg:my-20">
         <p className="text-lg font-semibold mb-5">{gig.cat}</p>
         <h1 className="text-xl font-medium text-slate-700 mb-2">{gig.title}</h1>
-        <div className="flex mt-5">
+        <div className="flex mt-5 mb-5">
           <img
             className="w-12 h-12 rounded-full"
             src={userData.img || "/img/noavatar.jpg"}
