@@ -30,7 +30,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <Disclosure as="nav" className="w-full bg-emerald-900">
+      <Disclosure as="nav" className="bg-emerald-900">
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
