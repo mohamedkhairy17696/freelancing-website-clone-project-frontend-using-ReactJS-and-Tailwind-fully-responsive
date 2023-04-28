@@ -4,7 +4,7 @@ import "./Gigs.scss";
 import GigCard from "../../components/GigCard/GigCard";
 import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 const Gigs = () => {
