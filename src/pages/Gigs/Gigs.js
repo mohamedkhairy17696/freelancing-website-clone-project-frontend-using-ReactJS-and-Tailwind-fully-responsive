@@ -71,9 +71,9 @@ const Gigs = () => {
     refetch();
   };
   return (
-    <div className="gigs mt-24">
+    <div className="gigs mt-24 pt-5">
       <div className="container mx-6 md:mx-12">
-        <span className="text-slate-700 font-semibold">
+        <span className="text-slate-700 text-2xl font-md">
           Explore Services That You Needed
         </span>
         <div className="menu flex md:flex-1">
@@ -94,12 +94,12 @@ const Gigs = () => {
             <button
               onClick={apply}
               type="submit"
-              class="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+              class="text-slate-100 bg-emerald-700 hover:bg-emerald-800 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
             >
               Search
             </button>
           </div>
-          <div className="block">
+          <div className="block mt-3">
             <label
               for="filter"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

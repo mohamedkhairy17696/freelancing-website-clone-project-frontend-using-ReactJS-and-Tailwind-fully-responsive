@@ -46,11 +46,11 @@ const Gig = () => {
   }, [userId]);
 
   return (
-    <div className="gig pt-14">
+    <div className="gig mt-24 pt-5 md:mt-20">
       {isPending && <Spinner />}
       {error && <div>Something wrong in fetching data{error.message}</div>}
-      <div className="container my-6 mx-6 md:mx-20 lg:my-20">
-        <p className="text-lg font-semibold mb-5">{gig.cat}</p>
+      <div className="container my-6 mx-1 md:mx-20 lg:my-20">
+        <p className="text-slate-700 text-2xl font-md mb-5">{gig.cat}</p>
         <h1 className="text-xl font-medium text-slate-700 mb-2">{gig.title}</h1>
         <div className="flex mt-5 mb-5">
           <img
@@ -78,7 +78,7 @@ const Gig = () => {
           )}
         </div>
 
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2 justify-center	items-center">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-1 lg:grid-cols-2 justify-center	items-start">
           <div className="mt-0 mr-12">
             <Carousel showArrows={false} showStatus={false}>
               <div>
@@ -92,7 +92,7 @@ const Gig = () => {
               </div>
             </Carousel>
             <h2 className="text-2xl font-medium	 mt-12">About This Gig</h2>
-            <p className="mt-3">{gig.desc}</p>
+            <p className="mt-3 text-slate-700">{gig.desc}</p>
           </div>
           <div className="items-start content-start">
             <div class="max-w-md p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">

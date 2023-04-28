@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import { useReducer } from "react";
 import { INITIAL_STATE, gigReducer } from "../../reducers/GigReducer";
-import Spinner from "../../components/Spinner/Spinner";
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
   const [singleFile1, setSingleFile1] = useState(undefined);
@@ -56,7 +55,7 @@ const Add = () => {
   };
 
   return (
-    <div className="container my-20 mx-5 md:mx-20 lg:mx-50">
+    <div className="container my-20 mx-5 md:mx-20 lg:mx-50 pt-14">
       <h1 className="text-2xl font-bold	 mb-6">Add New Gig</h1>
       <div className=" grid gap-3 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center mr-8">
         <form
