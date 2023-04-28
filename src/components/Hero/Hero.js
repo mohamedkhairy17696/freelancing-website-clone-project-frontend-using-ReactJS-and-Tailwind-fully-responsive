@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [input, setInput] = useState("");
@@ -51,20 +51,28 @@ const Hero = () => {
               </div>
               <div>
                 <span className="mb-2 text-white text-md font-medium	pr-2">
-                  Popular:
+                  Categories:
                 </span>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
-                  Website Design
-                </button>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
-                  WordPress
-                </button>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
-                  Logo Design
-                </button>
-                <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
-                  AI Services
-                </button>
+                <Link to={`/gigs?cat=Web Development`}>
+                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                    Web Development
+                  </button>
+                </Link>
+                <Link to={`/gigs?cat=Graphic Design`}>
+                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                    Graphic Design
+                  </button>
+                </Link>
+                <Link to={`/gigs?cat=Mobile Development`}>
+                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                    Mobile Development
+                  </button>
+                </Link>
+                <Link to={`/gigs?cat=Video Editting`}>
+                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                    Video Editting
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="mb-12 lg:mb-0">

@@ -22,7 +22,7 @@ const Navbar = () => {
     }
   };
   const navigation = [
-    { name: "Home", href: "/", current: false },
+    // { name: "Home", href: "/", current: false },
     { name: "Explore Services", href: "/gigs", current: false },
     // { name: "English", href: "/", current: false },
     // { name: "SignIn", href: "/", current: false },
@@ -47,9 +47,11 @@ const Navbar = () => {
               </div>
               <div className="flex mx-8 px-8 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <h1 className="text-slate-100 text-2xl font-md ">
-                    freelancer
-                  </h1>
+                  <Link to={"/"}>
+                    <h1 className="text-slate-100 text-2xl font-md ">
+                      freelancer
+                    </h1>
+                  </Link>
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">

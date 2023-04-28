@@ -176,7 +176,7 @@ const Gig = () => {
             <div className="flex justify-between">
               <div>
                 <div className="my-3">
-                  <p>From</p>
+                  <p>Seller Country</p>
                   <h3 className="mt-1 text-xl font-medium	">
                     {userData.country}
                   </h3>
@@ -188,19 +188,19 @@ const Gig = () => {
                   </h3>
                 </div>
                 <div className="my-3">
-                  <p>Languages</p>
+                  <p>Language</p>
                   <h3 className="mt-1 text-xl font-medium	">English</h3>
                 </div>
               </div>
               <div>
                 <div className="my-3">
-                  <p>Number Of Revisions</p>
+                  <p>Delivery time</p>
                   <h3 className="mt-1 text-xl font-medium	">
                     {gig.deliveryTime} days
                   </h3>
                 </div>
                 <div className="my-3">
-                  <p>Delivery time</p>
+                  <p>Number Of Revisions</p>
                   <h3 className="mt-1 text-xl font-medium	">
                     {gig.revisionNumber} Times
                   </h3>

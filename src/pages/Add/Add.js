@@ -7,6 +7,10 @@ import { INITIAL_STATE, gigReducer } from "../../reducers/GigReducer";
 import Spinner from "../../components/Spinner/Spinner";
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
+  const [singleFile1, setSingleFile1] = useState(undefined);
+  const [singleFile2, setSingleFile2] = useState(undefined);
+  const [singleFile3, setSingleFile3] = useState(undefined);
+
   const [uploading, setUploading] = useState(false);
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
   const navigate = useNavigate();
@@ -25,9 +29,9 @@ const Add = () => {
     setUploading(true);
     try {
       const cover = await upload(singleFile);
-      const imageSlide1 = await upload(singleFile);
-      const imageSlide2 = await upload(singleFile);
-      const imageSlide3 = await upload(singleFile);
+      const imageSlide1 = await upload(singleFile1);
+      const imageSlide2 = await upload(singleFile2);
+      const imageSlide3 = await upload(singleFile3);
 
       setUploading(false);
       dispatch({
@@ -92,10 +96,10 @@ const Add = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option selected>Choose a category</option>
-                <option value="Design">Design</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Animation">Animation</option>
-                <option value="Music">Music</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Web Development">Web Development</option>{" "}
+                <option value="Mobile Development">Mobile Development</option>
+                <option value="Video Editting">Video Editting</option>
               </select>
             </div>
             <div className="max-w my-6 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -126,7 +130,7 @@ const Add = () => {
                   type="file"
                   name="file"
                   id="file"
-                  onChange={(e) => setSingleFile(e.target.files[0])}
+                  onChange={(e) => setSingleFile1(e.target.files[0])}
                   className="bg-gray-50 border border-gray-300 text-slate-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required
                 />
@@ -142,7 +146,7 @@ const Add = () => {
                   type="file"
                   name="file"
                   id="file"
-                  onChange={(e) => setSingleFile(e.target.files[0])}
+                  onChange={(e) => setSingleFile2(e.target.files[0])}
                   className="bg-gray-50 border border-gray-300 text-slate-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
@@ -157,7 +161,7 @@ const Add = () => {
                   type="file"
                   name="file"
                   id="file"
-                  onChange={(e) => setSingleFile(e.target.files[0])}
+                  onChange={(e) => setSingleFile3(e.target.files[0])}
                   className="bg-gray-50 border border-gray-300 text-slate-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>{" "}
@@ -165,7 +169,7 @@ const Add = () => {
                 className="mt-8	text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                 onClick={handleUpload}
               >
-                {uploading ? "uploading" : "Upload Images"}
+                {uploading ? "uploading..." : "Upload Images"}
               </button>
             </div>
             <div className="mt-6">

@@ -23,9 +23,11 @@ function App() {
     return (
       <div className="app">
         {" "}
-        <Navbar />
-        <Outlet />
-        <Footer />
+        <QueryClientProvider client={queryClient}>
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </QueryClientProvider>
       </div>
     );
   };

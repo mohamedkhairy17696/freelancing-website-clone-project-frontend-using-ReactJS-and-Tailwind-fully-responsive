@@ -13,6 +13,7 @@ const Gigs = () => {
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
   const [sort, setSort] = useState("sales");
+  const [cat, setCat] = useState("");
   const { search } = useLocation();
   const { catTitle } = useParams();
 
@@ -31,7 +32,7 @@ const Gigs = () => {
         setError(err.message);
         console.log(err);
       });
-  }, [data, sort, search, catTitle]);
+  }, [data, sort, search, cat]);
 
   const reSort = (type) => {
     setSort(type);

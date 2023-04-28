@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import moment from "moment";
+import Spinner from "../../components/Spinner/Spinner";
 
 const Messages = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -63,6 +64,7 @@ const Messages = () => {
               Action
             </th>
           </tr>
+          {isPending && <Spinner />}
           {data.map((conv) => (
             <tr
               className={
