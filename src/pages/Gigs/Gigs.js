@@ -40,7 +40,6 @@ const Gigs = () => {
   // };
 
   const [sort, setSort] = useState("sales");
-  const [open, setOpen] = useState(false);
   const minRef = useRef();
   const maxRef = useRef();
 
@@ -62,7 +61,6 @@ const Gigs = () => {
 
   const reSort = (type) => {
     setSort(type);
-    setOpen(false);
   };
 
   useEffect(() => {
