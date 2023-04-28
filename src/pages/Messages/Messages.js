@@ -71,10 +71,10 @@ const Messages = () => {
               }
               key={conv.id}
             >
-              <td className="px-6 py-4z">
+              <td className="px-6 py-4">
                 <Link
                   to={`/message/${conv.id}`}
-                  className="underline text-blue-600	text-blue-700"
+                  className="text-blue-500	hover:text-blue-600	underline"
                 >
                   {conv?.lastMessage?.substring(0, 100)}...
                 </Link>
