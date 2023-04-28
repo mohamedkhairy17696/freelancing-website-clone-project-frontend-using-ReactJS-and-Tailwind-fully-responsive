@@ -77,7 +77,7 @@ const Messages = () => {
               <td className="px-6 py-4">
                 {currentUser.isSeller ? conv.buyerId : conv.sellerId}
               </td>
-              <td className="px-6 py-4">
+              <td className="px-6 py-4 underline text-blue-600 hover:text-blue-700">
                 <Link to={`/message/${conv.id}`} className="link">
                   {conv?.lastMessage?.substring(0, 100)}...
                 </Link>
