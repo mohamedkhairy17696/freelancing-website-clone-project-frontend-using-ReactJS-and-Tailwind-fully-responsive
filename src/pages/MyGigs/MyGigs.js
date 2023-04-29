@@ -57,9 +57,7 @@ const MyGigs = () => {
             <th scope="col" className="px-6 py-3">
               Price
             </th>
-            <th scope="col" className="px-6 py-3">
-              Sales
-            </th>
+
             <th scope="col" className="px-6 py-3">
               Action
             </th>
@@ -72,7 +70,6 @@ const MyGigs = () => {
               </td>
               <td className="px-6 py-4">{gig.title}</td>
               <td className="px-6 py-4">{gig.price}</td>
-              <td className="px-6 py-4">{gig.sales}</td>
               <td className="px-6 py-4">
                 <a
                   href="/#"
