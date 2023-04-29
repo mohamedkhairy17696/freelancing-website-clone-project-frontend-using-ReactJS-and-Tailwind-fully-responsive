@@ -12,24 +12,24 @@ const FeaturesDark = () => {
               New
             </span>
           </h1>
-          <h1 className="text-2xl font-md mb-3 text-slate-200">
+          <h1 className="text-3xl font-md mb-3 text-slate-200">
             A business solution designed for <i>teams</i>
           </h1>
-          <p className="text-slate-100 font-normal text-base	 mt-10 mb-8">
+          <p className="text-slate-200 text-2xl font-normal mt-10 mb-8">
             Upgrade to a curated experience packed with tools and benefits,
             dedicated to businesses
           </p>
-          <div className="flex text-slate-100 font-light mb-3">
+          <div className="flex text-slate-200 font-light mb-3">
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             Connect to freelancers with proven business experience
           </div>
 
-          <div className="flex text-slate-100	font-light mb-3">
+          <div className="flex text-slate-200	font-light mb-3">
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             Get matched with the perfect talent by a customer success manager
           </div>
 
-          <div className="flex text-slate-100 font-light mb-3">
+          <div className="flex text-slate-200 font-light mb-3">
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             Manage teamwork and boost productivity with one powerful workspace
           </div>
