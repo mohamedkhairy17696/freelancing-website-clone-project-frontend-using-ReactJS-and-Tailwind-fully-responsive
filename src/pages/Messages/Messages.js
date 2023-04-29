@@ -61,6 +61,7 @@ const Messages = () => {
               Action
             </th>
           </tr>
+          {isPending && <Spinner />}
           {data.map((conv) => (
             <tr
               className={

@@ -64,6 +64,7 @@ const MyGigs = () => {
               Action
             </th>
           </tr>
+          {isPending && <Spinner />}
           {gigs.map((gig) => (
             <tr key={gig._id}>
               <td className="px-6 py-4">
