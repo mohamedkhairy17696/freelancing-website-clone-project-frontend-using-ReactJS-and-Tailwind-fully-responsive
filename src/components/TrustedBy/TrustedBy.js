@@ -9,7 +9,6 @@ const TrustedBy = () => {
           alt=""
         />{" "}
       </div>
-
       <div class="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
         <img
           src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/google2x.06d74c8.png"
