@@ -45,7 +45,7 @@ const Register = () => {
         .then(() => {
           setIsPending(false);
         });
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }

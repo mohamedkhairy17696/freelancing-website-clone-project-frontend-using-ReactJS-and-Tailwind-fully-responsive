@@ -10,23 +10,6 @@ import newRequest from "../../utils/newRequest";
 import Spinner from "../../components/Spinner/Spinner";
 
 const Home = () => {
-  const [cats, setCats] = useState([]);
-  const [isPending, setIsPending] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    newRequest
-      .get(`/cats`)
-      .then((res) => {
-        setCats(res.data);
-        setIsPending(false);
-        setError(null);
-      })
-      .catch((err) => {
-        setIsPending(true);
-        setError(err.message);
-        console.log(err);
-      });
-  }, [cats]);
   return (
     <div className="home">
       <Hero />
