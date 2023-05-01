@@ -1,4 +1,9 @@
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  Outlet,
+  RouterProvider,
+  createBrowserRouter,
+  useLocation,
+} from "react-router-dom";
 import "./App.scss";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
@@ -17,6 +22,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Pay from "./pages/Pay/Pay";
 import Success from "./pages/Success/Success";
 import Nav from "./components/Nav/Nav";
+import { useEffect } from "react";
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 function App() {
   const queryClient = new QueryClient();
 
@@ -31,6 +45,7 @@ function App() {
             <hr class="h-px bg-gray-100 border-0 dark:bg-gray-700" />
             <Navbar />
           </div>
+          <ScrollToTop />
           <Outlet />
           <Footer />
         </QueryClientProvider>
