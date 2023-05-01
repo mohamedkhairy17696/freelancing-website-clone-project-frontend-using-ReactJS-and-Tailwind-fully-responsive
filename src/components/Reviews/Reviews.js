@@ -57,7 +57,7 @@ const Reviews = ({ gigId }) => {
             <hr className="my-6" />{" "}
           </div>
         ))}
-      {!currentUser?.isSeller && (
+      {!currentUser?.isSeller && currentUser && (
         <form
           className="sm:w-10/12 md:w-4/5 lg:w-3/5 mr-16"
           onSubmit={(e) => handleSubmit(e)}
