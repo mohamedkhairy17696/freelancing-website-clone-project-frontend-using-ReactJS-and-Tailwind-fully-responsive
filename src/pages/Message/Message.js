@@ -3,6 +3,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Message.scss";
+import moment from "moment";
 const Message = () => {
   const { id } = useParams();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -35,7 +36,7 @@ const Message = () => {
     e.target[0].value = "";
   };
   return (
-    <div className="message pt-14">
+    <div className="message mt-9 pt-14">
       <div className="container">
         <span className="breadcrumbs">
           <Link
@@ -51,12 +52,15 @@ const Message = () => {
           "error"
         ) : (
           <div className="messages">
-            {data.map((m) => (
+            {data.map((msg) => (
               <div
-                className={m.userId === currentUser._id ? "item" : "owner item"}
-                key={m._id}
+                className={
+                  msg.userId === currentUser._id ? "item" : "owner item"
+                }
+                key={msg._id}
               >
-                <p>{m.desc}</p>
+                <p>{msg.desc}</p>
+                <p>{moment(msg.createdAt).fromNow()}</p>
               </div>
             ))}
           </div>
