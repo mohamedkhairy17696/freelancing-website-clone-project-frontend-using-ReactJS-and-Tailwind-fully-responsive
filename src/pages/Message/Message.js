@@ -51,18 +51,22 @@ const Message = () => {
         ) : error ? (
           "error"
         ) : (
-          <div className="messages">
-            {data.map((msg) => (
-              <div
-                className={
-                  msg.userId === currentUser._id ? "item" : "owner item"
-                }
-                key={msg._id}
-              >
-                <p>{msg.desc}</p>
-                <p>{moment(msg.createdAt).fromNow()}</p>
-              </div>
-            ))}
+          <div>
+            <div className="messages">
+              {data.map((msg) => (
+                <div
+                  className={
+                    msg.userId === currentUser._id ? "item" : "owner item"
+                  }
+                  key={msg._id}
+                >
+                  <p className="">{msg.desc}</p>
+                  <span className="block text-gray-300 text-xs">
+                    {moment(msg.createdAt).fromNow()}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         )}
         <hr />
