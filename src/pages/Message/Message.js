@@ -37,8 +37,8 @@ const Message = () => {
   };
   return (
     <div className="message mt-9 pt-14">
-      <div className="container">
-        <span className="breadcrumbs">
+      <div className="container h-screen">
+        <span className="">
           <Link
             className="text-blue-600 hover:text-blue-700 text-lg underline"
             to="/messages"
@@ -61,7 +61,7 @@ const Message = () => {
                   key={msg._id}
                 >
                   <p className="">{msg.desc}</p>
-                  <span className="block text-gray-300 text-xs">
+                  <span className="block text-gray-300 text-xs mt-1">
                     {moment(msg.createdAt).fromNow()}
                   </span>
                 </div>
@@ -69,10 +69,20 @@ const Message = () => {
             </div>
           </div>
         )}
-        <hr />
-        <form className="write" onSubmit={handleSubmit}>
-          <textarea type="text" placeholder="write a message" />
-          <button type="submit">Send</button>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div class="bg-gray-300 p-4 flex">
+            <textarea
+              className=" flex items-center h-24 w-full rounded px-3 text-sm"
+              type="text"
+              placeholder="Type your message…"
+            />
+            <button
+              type="submit"
+              className="ml-3 my-12 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            >
+              Send
+            </button>
+          </div>
         </form>
       </div>
     </div>
