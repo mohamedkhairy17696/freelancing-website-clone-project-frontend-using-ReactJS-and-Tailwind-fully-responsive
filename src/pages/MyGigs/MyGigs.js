@@ -31,7 +31,7 @@ const MyGigs = () => {
   return (
     <div className="my-20 mx-6 lg:mx-12 pt-14">
       <div className="flex justify-between mb-8">
-        <h1 className="text-xl font-bold">
+        <h1 className="text-2xl font-medium text-slate-700">
           {currentUser.isSeller ? "My Gigs" : "Orders"}
         </h1>
         {currentUser.isSeller && (
@@ -62,7 +62,6 @@ const MyGigs = () => {
               Action
             </th>
           </tr>
-          {isPending && <Spinner />}
           {gigs.map((gig) => (
             <tr key={gig._id}>
               <td className="px-6 py-4">

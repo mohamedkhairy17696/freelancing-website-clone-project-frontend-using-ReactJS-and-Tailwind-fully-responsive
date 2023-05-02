@@ -44,7 +44,7 @@ const Orders = () => {
   return (
     <div className="my-20 mx-6 lg:mx-12 pt-14">
       <div className="mb-8">
-        <h1 className="text-xl font-bold">Orders</h1>
+        <h1 className="text-2xl font-medium text-slate-700">Orders</h1>
       </div>
       <div className="container relative overflow-x-auto shadow-md sm:rounded-lg p-8">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

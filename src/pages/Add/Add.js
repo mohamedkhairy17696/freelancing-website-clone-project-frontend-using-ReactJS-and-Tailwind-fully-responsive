@@ -55,9 +55,11 @@ const Add = () => {
   };
 
   return (
-    <div className="container my-20 mx-5 md:mx-20 lg:mx-50 pt-14">
-      <h1 className="text-2xl font-bold	 mb-6">Add New Gig</h1>
-      <div className=" grid gap-3 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center mr-8">
+    <div className="container my-20 mx-5 pt-14">
+      <h1 className="text-2xl font-medium text-slate-700 text-center mb-6">
+        Add New Gig
+      </h1>
+      <div className=" flex gap-3 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center mr-8">
         <form
           onSubmit={handleSubmit}
           className="space-y-4 md:space-y-6"
