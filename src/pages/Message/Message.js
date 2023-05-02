@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
 import "./Message.scss";
 import moment from "moment";
+import Spinner from "../../components/Spinner/Spinner";
 const Message = () => {
   const { id } = useParams();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -47,7 +48,7 @@ const Message = () => {
           </Link>
         </span>
         {isLoading ? (
-          "loading"
+          <Spinner />
         ) : error ? (
           "error"
         ) : (
