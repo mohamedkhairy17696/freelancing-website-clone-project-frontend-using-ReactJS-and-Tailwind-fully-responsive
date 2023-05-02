@@ -48,7 +48,7 @@ const Reviews = ({ gigId }) => {
   };
 
   return (
-    <div className="reviews">
+    <div className="mx-3 reviews">
       <h2 className="text-2xl font-medium	 mt-20 mb-8">Reviews</h2>
       {data &&
         data.map((review) => (
