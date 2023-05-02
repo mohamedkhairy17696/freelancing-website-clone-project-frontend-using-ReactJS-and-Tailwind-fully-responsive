@@ -8,37 +8,6 @@ import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 const Gigs = () => {
-  // const minRef = useRef();
-  // const maxRef = useRef();
-  // const [data, setData] = useState([]);
-  // const [isPending, setIsPending] = useState(true);
-  // const [error, setError] = useState(null);
-  // const [sort, setSort] = useState("sales");
-  // const [cat, setCat] = useState("");
-  // const { search } = useLocation();
-  // const { catTitle } = useParams();
-
-  // useEffect(() => {
-  //   newRequest
-  //     .get(
-  //       `/gigs/?{search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
-  //     )
-  //     .then((res) => {
-  //       setData(res.data);
-  //       setIsPending(false);
-  //       setError(null);
-  //     })
-  //     .catch((err) => {
-  //       setIsPending(true);
-  //       setError(err.message);
-  //       console.log(err);
-  //     });
-  // }, [data, sort, search, cat]);
-
-  // const reSort = (type) => {
-  //   setSort(type);
-  // };
-
   const [sort, setSort] = useState("sales");
   const minRef = useRef();
   const maxRef = useRef();
@@ -93,7 +62,7 @@ const Gigs = () => {
             />
             <button
               type="submit"
-              class="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+              className="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
               onClick={apply}
             >
               Search
@@ -101,14 +70,14 @@ const Gigs = () => {
           </div>
           <div className="block mt-3">
             <label
-              for="filter"
+              htmlFor="filter"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Sort by
             </label>
             <select
               id="filter"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-700 focus:border-emerald-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-700 dark:focus:border-emerald-700"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-700 focus:border-emerald-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-700 dark:focus:border-emerald-700"
             >
               <option value="bestSelling" onClick={() => reSort("sales")}>
                 Best Selling
@@ -122,15 +91,6 @@ const Gigs = () => {
             </select>
           </div>
         </div>
-        {/*<div className="cards">
-          {isPending && <Spinner />}
-          {error && (
-            <div>Something wrong in fetching data🧨🧨🧯🧯{error.message}</div>
-          )}
-          {data.map((gig) => (
-            <GigCard key={gig._id} item={gig} />
-          ))}
-          </div>*/}
         <div className="cards">
           {isLoading
             ? "loading"

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
-import Spinner from "../../components/Spinner/Spinner";
 const MyGigs = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 

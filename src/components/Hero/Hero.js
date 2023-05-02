@@ -39,7 +39,7 @@ const Hero = () => {
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      class="h-5 w-5"
+                      className="h-5 w-5"
                     >
                       <path
                         fill-rule="evenodd"
@@ -55,22 +55,22 @@ const Hero = () => {
                   Categories:
                 </span>
                 <Link to={`/gigs?cat=Web Development`}>
-                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                  <button className="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                     Web Development
                   </button>
                 </Link>
                 <Link to={`/gigs?cat=Graphic Design`}>
-                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                  <button className="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                     Graphic Design
                   </button>
                 </Link>
                 <Link to={`/gigs?cat=Mobile Development`}>
-                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                  <button className="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                     Mobile Development
                   </button>
                 </Link>
                 <Link to={`/gigs?cat=Video Editting`}>
-                  <button class="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
+                  <button className="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                     Video Editting
                   </button>
                 </Link>
@@ -79,7 +79,7 @@ const Hero = () => {
             <div className="mb-12 lg:mb-0">
               <img
                 src="./img/man.png"
-                class="w-full rounded-lg shadow-lg"
+                className="w-full rounded-lg shadow-lg"
                 alt=""
               />
             </div>

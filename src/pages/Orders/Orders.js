@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Spinner from "../../components/Spinner/Spinner";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 
@@ -75,7 +74,7 @@ const Orders = () => {
                 <button
                   onClick={() => handleContact(order)}
                   type="button"
-                  class="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                  className="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
                 >
                   {currentUser.isSeller
                     ? "Contact With Buyer"
