@@ -56,9 +56,12 @@ const Add = () => {
 
   return (
     <div className="container my-20 mx-5 pt-14">
-      <h1 className="text-2xl font-medium text-slate-700 text-center mb-6">
+      <h1 className="text-2xl font-medium text-slate-700 text-center mb-3">
         Add New Gig
       </h1>
+      <h2 className="text-2xl font-light text-slate-700 text-center mb-6">
+        All Fields Required
+      </h2>
       <div className=" flex gap-3 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center mr-8">
         <form
           onSubmit={handleSubmit}
@@ -109,7 +112,7 @@ const Add = () => {
                   htmlFor="file"
                   className="block mb-2 text-sm font-medium text-slate-700 dark:text-slate-700"
                 >
-                  Cover Image
+                  Cover Image (Required)
                 </label>
                 <input
                   type="file"
@@ -125,7 +128,7 @@ const Add = () => {
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="imageSlide1"
                 >
-                  Slide Image1
+                  Slide Image1 (Required)
                 </label>
                 <input
                   type="file"
@@ -141,13 +144,14 @@ const Add = () => {
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="imageSlide2"
                 >
-                  Slide Image2
+                  Slide Image2 (Required)
                 </label>
                 <input
                   type="file"
                   name="file"
                   id="file"
                   onChange={(e) => setSingleFile2(e.target.files[0])}
+                  required
                   className="bg-gray-50 border border-gray-300 text-slate-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
@@ -156,13 +160,14 @@ const Add = () => {
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   htmlFor="imageSlide3"
                 >
-                  Slide Image3
+                  Slide Image3 (Required)
                 </label>
                 <input
                   type="file"
                   name="file"
                   id="file"
                   onChange={(e) => setSingleFile3(e.target.files[0])}
+                  required
                   className="bg-gray-50 border border-gray-300 text-slate-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>{" "}
