@@ -27,7 +27,7 @@ const Gig = () => {
         setError(err.message);
         console.log(err);
       });
-  }, [id]); //  on send url dependency useEffect will render dom iitially
+  }, [id, gig]); //  on send url dependency useEffect will render dom iitially
 
   const userId = gig?.userId;
   useEffect(() => {
@@ -43,7 +43,7 @@ const Gig = () => {
         setError(err.message);
         console.log(err);
       });
-  }, [userId]);
+  }, [userId, userData]);
 
   return (
     <div className="gig mt-24 pt-5 md:mt-20">
