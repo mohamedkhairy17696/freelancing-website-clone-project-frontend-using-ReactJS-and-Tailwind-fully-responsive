@@ -83,7 +83,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <form className="m-20" id="payment-form" onSubmit={handleSubmit}>
+    <form className="mx-3 my-20" id="payment-form" onSubmit={handleSubmit}>
       {email && (
         <LinkAuthenticationElement
           id="link-authentication-element"
