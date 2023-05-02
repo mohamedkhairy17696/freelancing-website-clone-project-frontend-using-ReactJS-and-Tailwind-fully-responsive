@@ -46,15 +46,11 @@ const Gig = () => {
   }, [userId, userData]);
 
   return (
-    <div className="gig mt-24 pt-5 md:mt-20">
+    <div className="gig mt-24 pt-5 md:mt-14">
       {isPending && <Spinner />}
       <div className="container my-8 mx-1 md:mx-20 lg:my-20">
-        <p className="text-slate-700 mx-3 text-2xl font-medium mb-5">
-          {gig.cat}
-        </p>
-        <h1 className="text-3xl font-medium mx-3 text-slate-700 mb-2">
-          {gig.title}
-        </h1>
+        <p className="text-3xl font-medium text-slate-700 mb-5">{gig.cat}</p>
+        <h1 className="text-xl font-normal text-slate-700 mb-2">{gig.title}</h1>
         <div className="flex mt-5 mx-3 mb-5">
           <img
             className="w-12 h-12 rounded-full"

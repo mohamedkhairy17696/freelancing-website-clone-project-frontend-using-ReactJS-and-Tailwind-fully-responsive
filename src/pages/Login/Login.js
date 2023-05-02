@@ -22,7 +22,7 @@ const Login = () => {
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-xl font-semibold leading-tight tracking-tight text-slate-700 md:text-2xl dark:text-white">
+            <h1 className="text-3xl font-medium text-slate-700 ">
               Sign in to your account
             </h1>
             <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ const Login = () => {
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="••••••••"
+                  placeholder="Strong password (Ex:Ab#12345)"
                   pattern="^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required

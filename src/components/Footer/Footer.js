@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-white dark:bg-gray-900 mt-8 mx-5 md:mx-16">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-10 lg:py-20 md:grid-cols-4">
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-5 text-xl font-medium text-slate-700 uppercase dark:text-white">
               Categories
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -74,7 +74,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-5 text-xl font-medium text-slate-700 uppercase dark:text-white">
               About
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -116,7 +116,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-5 text-xl font-medium text-slate-700 uppercase dark:text-white">
               Support
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
@@ -143,7 +143,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 className="mb-5 text-xl font-medium text-slate-700 uppercase dark:text-white">
               Community
             </h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
