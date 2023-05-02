@@ -95,7 +95,7 @@ const Gigs = () => {
           {isLoading ? (
             <Spinner />
           ) : error ? (
-            "Something went wrong!"
+            "Something wrong in feching data"
           ) : (
             data.map((gig) => <GigCard key={gig._id} item={gig} />)
           )}
