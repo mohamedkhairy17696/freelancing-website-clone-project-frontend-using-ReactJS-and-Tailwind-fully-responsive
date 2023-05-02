@@ -5,14 +5,14 @@ const FeaturesDark = () => {
     <div className="bg-indigo-950">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-6 md:mx-20 py-20 justify-center items-center">
         <div className="item">
-          <h1 className="text-3xl text-slate-100 font-medium mb-3 text-slate-50">
+          <h1 className="text-3xl text-slate-200 font-medium mb-3 text-slate-50">
             Freelancer business.
-            <span class="ml-2 font-semibold bg-indigo-800 text-slate-100 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-yellow-300 border border-indigo-800">
+            <span class="ml-2 font-normal bg-indigo-800 text-slate-200 text-xs px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-yellow-300 border border-indigo-800">
               New
             </span>
           </h1>
-          <h1 className="text-3xl font-md mb-3 text-slate-200">
-            A business solution designed for <i>teams</i>
+          <h1 className="text-3xl font-normal mb-3 text-slate-200">
+            A business solution designed for teams
           </h1>
           <p className="text-slate-200 text-2xl font-normal mt-10 mb-8">
             Upgrade to a curated experience packed with tools and benefits,

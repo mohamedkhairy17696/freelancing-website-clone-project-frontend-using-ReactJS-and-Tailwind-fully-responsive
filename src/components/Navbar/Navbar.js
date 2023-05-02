@@ -49,7 +49,7 @@ const Navbar = () => {
                 <div className="flex mx-8 px-8 items-center justify-center sm:items-stretch sm:justify-start">
                   <div className="flex flex-shrink-0 items-center">
                     <Link to={"/"}>
-                      <h1 className="text-slate-100 text-2xl font-md ">
+                      <h1 className="text-slate-100 text-2xl font-medium mr-12 ">
                         freelancer
                       </h1>
                     </Link>
@@ -77,15 +77,15 @@ const Navbar = () => {
                   </div>
                   {!currentUser && (
                     <Link to="/register">
-                      <button className="bg-transparent hover:bg-emerald-600 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
-                        SignUp Now
+                      <button className="bg-transparent hover:bg-emerald-600 text-white font-md hover:text-white ml-6 py-2 ml-4 px-2 border border-white hover:border-transparent rounded">
+                        SignUp
                       </button>
                     </Link>
                   )}
                   <p className="text-slate-100 mx-2">{currentUser?.username}</p>
 
                   {/* Profile dropdown */}
-                  <Menu as="div" className="relative ml-3">
+                  <Menu as="div" className="relative ml-1">
                     <div>
                       {currentUser ? (
                         <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">

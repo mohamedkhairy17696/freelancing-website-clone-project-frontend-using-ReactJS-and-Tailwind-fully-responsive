@@ -4,7 +4,7 @@ const Features = () => {
     <div className="bg-emerald-50">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-6 md:mx-20 py-20 justify-center	items-center">
         <div className="">
-          <h1 className="text-3xl font-bold mb-6 text-slate-700">
+          <h1 className="text-3xl font-medium mb-6 text-slate-700">
             A whole world of freelance talent at your fingertips
           </h1>
           <div className="flex font-bold text-slate-600 mb-2">
