@@ -44,11 +44,11 @@ const GigCard = ({ item }) => {
             {item.shortDesc}
           </h3>
         </div>
-        <hr className="mt-4" />
-        <div className="leading-8 detail pt-2  px-3">
+        <hr className="mt-3" />
+        <div className="leading-8 detail pt-2 px-3">
           <div className="flex">
-            <img src="../img/star.png" className="mb-1 mr-1" alt="" />
-            <span>
+            <img src="../img/star.png" className="mt-2 mr-1" alt="" />
+            <span className="text-yellow-500">
               {!isNaN(item.totalStars / item.starNumber) &&
                 Math.round(item.totalStars / item.starNumber)}
             </span>
