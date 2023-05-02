@@ -77,8 +77,8 @@ const Navbar = () => {
                   </div>
                   {!currentUser && (
                     <Link to="/register">
-                      <button className="bg-transparent hover:bg-emerald-500 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
-                        Join
+                      <button className="bg-transparent hover:bg-emerald-600 text-white font-md hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
+                        SignUp Now
                       </button>
                     </Link>
                   )}
