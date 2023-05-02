@@ -60,7 +60,7 @@ const Add = () => {
         Add New Gig
       </h1>
       <h2 className="text-2xl font-light text-slate-700 text-center mb-6">
-        All Fields Required
+        All Fields are Required
       </h2>
       <div className=" flex gap-3 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 justify-center items-center mr-8">
         <form

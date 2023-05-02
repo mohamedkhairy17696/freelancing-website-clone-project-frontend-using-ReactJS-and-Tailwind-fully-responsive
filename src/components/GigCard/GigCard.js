@@ -47,7 +47,7 @@ const GigCard = ({ item }) => {
         <hr className="mt-4" />
         <div className="leading-8 detail pt-2  px-3">
           <div className="flex">
-            <img src="../img/star.png" className="mt-2 mr-1" alt="" />
+            <img src="../img/star.png" className="mb-1 mr-1" alt="" />
             <span>
               {!isNaN(item.totalStars / item.starNumber) &&
                 Math.round(item.totalStars / item.starNumber)}
