@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
+import { useForm } from "react-hook-form";
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +19,7 @@ const Login = () => {
       setError(err.response.data);
     }
   };
+
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -40,7 +43,7 @@ const Login = () => {
                   pattern="\w{3,16}"
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="username"
-                  required=""
+                  required
                   onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
@@ -68,7 +71,7 @@ const Login = () => {
               >
                 Sign in
               </button>
-              {error && error}
+              {error && <span className="text-red-600">{error}</span>}
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Don’t have an account yet?{" "}
                 <Link

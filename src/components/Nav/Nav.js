@@ -4,7 +4,7 @@ const Nav = () => {
   return (
     <div>
       <nav className="bg-emerald-900">
-        <div className="max-w-screen-xl pl-1 pr-4 md:px-4 md:py-3 mx-auto">
+        <div className="max-w-screen-xl pl-1 pr-3 md:px-4 py-2 md:py-3 mx-auto">
           <div className="flex items-center">
             <ul className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
               <li>

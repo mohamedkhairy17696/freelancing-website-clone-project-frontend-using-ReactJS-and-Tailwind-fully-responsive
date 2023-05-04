@@ -15,7 +15,7 @@ const Register = () => {
     isSeller: false,
   });
   const [isPending, setIsPending] = useState(false);
-
+  const [error, setError] = useState(null);
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
 
@@ -47,6 +47,7 @@ const Register = () => {
         });
       navigate("/login");
     } catch (err) {
+      setError(err.message);
       console.log(err);
     }
   };
@@ -92,6 +93,7 @@ const Register = () => {
                   type="email"
                   name="email"
                   id="email"
+                  // pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/"
                   onChange={(e) => handleChange(e)}
                   className="bg-gray-50 border border-gray-300 text-slate-700 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@gmail.com"
@@ -204,6 +206,7 @@ const Register = () => {
               >
                 Register Now
               </button>
+              {error && <span>{error.message}</span>}
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                 Already have an account?{" "}
                 <Link
