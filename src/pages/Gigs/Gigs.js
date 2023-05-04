@@ -8,7 +8,6 @@ import { useLocation } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 const Gigs = () => {
-  const [sort, setSort] = useState("sales");
   const minRef = useRef();
   const maxRef = useRef();
 
@@ -19,16 +18,12 @@ const Gigs = () => {
     queryFn: () =>
       newRequest
         .get(
-          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}&sort=${sort}`
+          `/gigs${search}&min=${minRef.current.value}&max=${maxRef.current.value}`
         )
         .then((res) => {
           return res.data;
         }),
   });
-
-  const reSort = (type) => {
-    setSort(type);
-  };
 
   useEffect(() => {
     refetch();
@@ -37,6 +32,7 @@ const Gigs = () => {
   const apply = () => {
     refetch();
   };
+
   return (
     <div className="gigs mt-24 pt-5">
       <div className="container mx-6 md:mx-12">
@@ -65,28 +61,6 @@ const Gigs = () => {
             >
               Search
             </button>
-          </div>
-          <div className="block mt-3">
-            <label
-              htmlFor="filter"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Sort by
-            </label>
-            <select
-              id="filter"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-emerald-700 focus:border-emerald-700 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-emerald-700 dark:focus:border-emerald-700"
-            >
-              <option value="bestSelling" onClick={() => reSort("sales")}>
-                Best Selling
-              </option>
-              <option value="newest" onClick={() => reSort("createdAt")}>
-                Newest
-              </option>
-              <option value="popular" onClick={() => reSort("sales")}>
-                Popular
-              </option>
-            </select>
           </div>
         </div>
         <div className="cards">
