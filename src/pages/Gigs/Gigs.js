@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useRef } from "react";
 import "./Gigs.scss";
 import GigCard from "../../components/GigCard/GigCard";
