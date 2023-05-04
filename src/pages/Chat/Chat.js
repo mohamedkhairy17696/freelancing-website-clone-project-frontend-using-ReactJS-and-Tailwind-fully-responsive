@@ -2,7 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
-import "./Message.scss";
+import "./Chat.scss";
 import moment from "moment";
 import Spinner from "../../components/Spinner/Spinner";
 const Message = () => {

@@ -39,7 +39,7 @@ const Success = () => {
           <p className="text-gray-600 my-2">
             Thank you for completing your secure online payment.
           </p>
-          <p>Service addet to your confirmation orders</p>
+          <p>Service added to your confirmation orders</p>
         </div>
       </div>
     </div>
