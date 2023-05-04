@@ -12,7 +12,7 @@ import Add from "./pages/Add/Add";
 import Gigs from "./pages/Gigs/Gigs";
 import Login from "./pages/Login/Login";
 import Message from "./pages/Chat/Chat";
-import Messages from "./pages/Messages/Messages";
+import Messages from "./pages/LastMessages/LastMessages";
 import MyGigs from "./pages/MyGigs/MyGigs";
 import GigDetails from "./pages/GigDetails/GigDetails";
 import Orders from "./pages/Orders/Orders";
