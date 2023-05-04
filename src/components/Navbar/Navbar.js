@@ -3,6 +3,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useNavigate } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
+import { useTranslation } from "react-i18next";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -11,7 +12,7 @@ function classNames(...classes) {
 const Navbar = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const navigate = useNavigate();
-
+  const [t, i18n] = useTranslation();
   const logout = async () => {
     try {
       await newRequest.post("/auth/logout");
@@ -82,23 +83,29 @@ const Navbar = () => {
                       </button>
                     </Link>
                   )}
-                  {currentUser && (
+                  {i18n.language === "en" && currentUser && (
                     <button
+                      onClick={() => {
+                        i18n.changeLanguage("ar");
+                      }}
                       type="button"
-                      className="mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      className="mt-2 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-2 py-1 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                     >
                       AR
                     </button>
                   )}
-                  {currentUser && (
+                  {i18n.language === "ar" && currentUser && (
                     <button
+                      onClick={() => {
+                        i18n.changeLanguage("en");
+                      }}
                       type="button"
-                      className="mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      className="mt-2 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                     >
                       EN
                     </button>
                   )}
-                  <p className="text-slate-100 mx-2">{currentUser?.username}</p>
+                  <p className="text-slate-100 mr-2">{currentUser?.username}</p>
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-1">

@@ -4,14 +4,11 @@ import TrustedBy from "../../components/TrustedBy/TrustedBy";
 import Features from "../../components/Features/Features";
 import Explore from "../../components/Explore/Explore";
 import FeaturesDark from "../../components/FeaturesDark/FeaturesDark";
-import { useState } from "react";
-import { useEffect } from "react";
-import newRequest from "../../utils/newRequest";
-import Spinner from "../../components/Spinner/Spinner";
-
+import { useTranslation } from "react-i18next";
 const Home = () => {
+  const [t, i18n] = useTranslation();
   return (
-    <div className="home">
+    <div className="" dir={i18n.language === "ar" && "rtl"}>
       <Hero />
       <TrustedBy />
       <Features />
