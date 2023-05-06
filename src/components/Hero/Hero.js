@@ -12,12 +12,12 @@ const Hero = () => {
     <div>
       <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left mt-20 lg:mt-16">
         <div className="container mx-auto xl:px-32">
-          <div className="grid lg:grid-cols-2 gap-12 flex items-center">
-            <div className="mt-10 mb-0 lg:mb-12 lg:mt-0">
-              <h1 className="text-5xl text-slate-200 md:text-6xl xl:text-7xl font-light mb-12">
+          <div className="grid lg:grid-cols-2 gap-32 flex items-center">
+            <div className="mt-10 mb-0 lg:mb-12 lg:mt-12">
+              <h1 className="text-5xl text-slate-200 md:text-6xl xl:text-7xl font-light mb-6">
                 Find the perfect freelance services for your business
               </h1>
-              <div className="mb-3 xl:w-96">
+              <div className="mb-6 xl:w-96">
                 <div className="relative mb-4 flex w-full flex-wrap items-stretch">
                   <input
                     type="text"
@@ -51,7 +51,7 @@ const Hero = () => {
                 </div>
               </div>
               <div>
-                <span className="mb-2 text-white text-md font-medium	pr-2">
+                <span className="mb-0 text-white text-md font-medium pr-2">
                   Categories:
                 </span>
                 <Link to={`/gigs?cat=Web Development`}>
@@ -78,8 +78,8 @@ const Hero = () => {
             </div>
             <div className="lg:mb-0">
               <img
-                src="./img/hero.jpg"
-                className="w-3/4 h-3/4 rounded-lg shadow-lg hidden lg:block"
+                src="./img/hero2.jpg"
+                className="w-5/6 rounded-lg shadow-lg hidden lg:block"
                 alt=""
               />
             </div>
