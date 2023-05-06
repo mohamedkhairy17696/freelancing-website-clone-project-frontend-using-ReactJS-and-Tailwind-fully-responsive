@@ -10,10 +10,10 @@ const Hero = () => {
   };
   return (
     <div>
-      <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left mt-20">
+      <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left mt-20 lg:mt-16">
         <div className="container mx-auto xl:px-32">
           <div className="grid lg:grid-cols-2 gap-12 flex items-center">
-            <div className="mt-12 lg:mt-0">
+            <div className="mt-10 mb-0 lg:mb-12 lg:mt-0">
               <h1 className="text-5xl text-slate-200 md:text-6xl xl:text-7xl font-light mb-12">
                 Find the perfect freelance services for your business
               </h1>
@@ -76,10 +76,10 @@ const Hero = () => {
                 </Link>
               </div>
             </div>
-            <div className="mb-12 lg:mb-0">
+            <div className="lg:mb-0">
               <img
-                src="./img/man.png"
-                className="w-full rounded-lg shadow-lg"
+                src="./img/hero.jpg"
+                className="w-3/4 h-3/4 rounded-lg shadow-lg hidden lg:block"
                 alt=""
               />
             </div>
