@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FeaturesDark = () => {
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate(`/gigs?search=${input}`);
+  };
   return (
     <div className="bg-indigo-950">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-6 md:mx-20 py-20 justify-center items-center">
@@ -32,6 +39,14 @@ const FeaturesDark = () => {
             <img src="./img/check.png" alt="" className="mr-2 w-6" />
             Manage teamwork and boost productivity with one powerful workspace
           </div>
+
+          <button
+            onClick={handleSubmit}
+            type="button"
+            className="mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+          >
+            Explore Services
+          </button>
         </div>
         <div>
           <img

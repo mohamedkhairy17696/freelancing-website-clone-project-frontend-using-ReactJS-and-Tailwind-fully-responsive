@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import newRequest from "../../utils/newRequest";
+
 const MyGigs = () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
@@ -69,13 +70,12 @@ const MyGigs = () => {
               <td className="px-6 py-4">{gig.title}</td>
               <td className="px-6 py-4">{gig.price}</td>
               <td className="px-6 py-4">
-                <a
-                  href="/#"
+                <button
                   onClick={() => handleDelete(gig._id)}
                   className="font-medium text-red-600 dark:text-blue-500 hover:underline"
                 >
                   Delete
-                </a>
+                </button>
               </td>
             </tr>
           ))}
