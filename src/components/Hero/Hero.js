@@ -5,7 +5,7 @@ const Hero = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSearch = () => {
     navigate(`/gigs?search=${input}`);
   };
   return (
@@ -33,7 +33,7 @@ const Hero = () => {
                     id="button-addon1"
                     data-te-ripple-init
                     data-te-ripple-color="light"
-                    onClick={handleSubmit}
+                    onClick={() => handleSearch()}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@ const FeaturesDark = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const getAllGigs = () => {
     navigate(`/gigs?search=${input}`);
   };
   return (
@@ -41,11 +41,11 @@ const FeaturesDark = () => {
           </div>
 
           <button
-            onClick={handleSubmit}
+            onClick={() => getAllGigs()}
             type="button"
             className="mt-8 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
           >
-            Explore Services
+            Explore All Services
           </button>
         </div>
         <div>
