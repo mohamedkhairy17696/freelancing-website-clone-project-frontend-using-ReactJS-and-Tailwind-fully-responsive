@@ -10,9 +10,9 @@ const Hero = () => {
   };
   return (
     <div>
-      <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left mt-2">
+      <div className="px-6 py-12 md:px-12 bg-emerald-900 text-gray-800 text-center lg:text-left mt-20">
         <div className="container mx-auto xl:px-32">
-          <div className="grid lg:grid-cols-2 gap-16 flex items-center">
+          <div className="grid lg:grid-cols-2 gap-12 flex items-center">
             <div className="mt-12 lg:mt-0">
               <h1 className="text-5xl text-slate-200 md:text-6xl xl:text-7xl font-light mb-12">
                 Find the perfect freelance services for your business
@@ -78,8 +78,8 @@ const Hero = () => {
             </div>
             <div className="mb-12 lg:mb-0">
               <img
-                src="https://images.pexels.com/photos/9143878/pexels-photo-9143878.jpeg?auto=compress&cs=tinysrgb&w=600"
-                className="w-3/4 leading-10 rounded-lg shadow-lg"
+                src="./img/man.png"
+                className="w-full rounded-lg shadow-lg"
                 alt=""
               />
             </div>
