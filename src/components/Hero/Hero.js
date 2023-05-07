@@ -54,6 +54,12 @@ const Hero = () => {
                 <span className="mb-0 text-white text-md font-medium pr-2">
                   Services:
                 </span>
+                <button
+                  onClick={handleSearch}
+                  className="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full"
+                >
+                  All Services
+                </button>
                 <Link to={`/gigs?cat=Web Development`}>
                   <button className="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
                     Web Development
