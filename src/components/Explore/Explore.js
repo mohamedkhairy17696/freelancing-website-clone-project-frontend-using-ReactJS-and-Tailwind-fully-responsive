@@ -2,7 +2,7 @@ import React from "react";
 
 const Explore = () => {
   return (
-    <div className="explore mx-6 md:mx-20 py-20">
+    <div className="w-full px-6 md:px-20 py-20 bg-neutral-50">
       <div className="container">
         <h1 className="text-3xl font-medium mb-6 text-slate-700">
           Explore the marketplace

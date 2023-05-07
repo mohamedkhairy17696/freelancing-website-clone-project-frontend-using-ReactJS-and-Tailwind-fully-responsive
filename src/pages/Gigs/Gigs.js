@@ -56,7 +56,7 @@ const Gigs = () => {
             />
             <button
               type="submit"
-              className="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+              className="text-slate-100 bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
               onClick={apply}
             >
               Search
