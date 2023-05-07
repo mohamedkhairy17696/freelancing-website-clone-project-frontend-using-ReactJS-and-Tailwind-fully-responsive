@@ -9,7 +9,7 @@ const FeaturesDark = () => {
     navigate(`/gigs?search=${input}`);
   };
   return (
-    <div className="bg-indigo-950">
+    <div className="bg-slate-800		">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 mx-6 md:mx-20 py-20 justify-center items-center">
         <div className="item">
           <h1 className="text-3xl text-slate-200 font-medium mb-3 text-slate-50">
@@ -50,7 +50,8 @@ const FeaturesDark = () => {
         </div>
         <div>
           <img
-            src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_2.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624768/business-desktop-870-x2.png"
+            className="rounded"
+            src="https://images.unsplash.com/photo-1585076641399-5c06d1b3365f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             alt=""
           />
         </div>
