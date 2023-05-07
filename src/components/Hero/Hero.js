@@ -52,7 +52,7 @@ const Hero = () => {
               </div>
               <div>
                 <span className="mb-0 text-white text-md font-medium pr-2">
-                  Categories:
+                  Services:
                 </span>
                 <Link to={`/gigs?cat=Web Development`}>
                   <button className="mb-2 mr-2 py-1 bg-transparent hover:bg-white text-white text-xs font-md hover:text-black px-4 border border-white hover:border-transparent rounded-full">
