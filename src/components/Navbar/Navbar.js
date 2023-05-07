@@ -83,13 +83,13 @@ const Navbar = () => {
                       </button>
                     </Link>
                   )}
-                  {i18n.language === "en" && currentUser && (
+                  {/*{i18n.language === "en" && currentUser && (
                     <button
                       onClick={() => {
                         i18n.changeLanguage("ar");
                       }}
                       type="button"
-                      className="mt-2 text-center focus:outline-none text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm px-2 py-1 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                      className="mt-2 text-center focus:outline-none text-white bg-neutra-50 hover:bg-neutra-100 font-medium rounded-lg text-sm px-2 py-1 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                     >
                       AR
                     </button>
@@ -104,7 +104,7 @@ const Navbar = () => {
                     >
                       EN
                     </button>
-                  )}
+                    )}*/}
                   <p className="text-slate-100 mr-2">{currentUser?.username}</p>
 
                   {/* Profile dropdown */}
