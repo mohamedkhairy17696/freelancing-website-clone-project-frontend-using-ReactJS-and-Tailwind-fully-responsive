@@ -8,7 +8,6 @@ import Spinner from "../../components/Spinner/Spinner";
 const Message = () => {
   const { id } = useParams();
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
   const queryClient = useQueryClient();
 
   const { isLoading, error, data } = useQuery({
@@ -28,7 +27,7 @@ const Message = () => {
     },
   });
 
-  const handleSubmit = (e) => {
+  const handleSendMessage = (e) => {
     e.preventDefault();
     mutation.mutate({
       conversationId: id,
@@ -70,7 +69,7 @@ const Message = () => {
             </div>
           </div>
         )}
-        <form onSubmit={(e) => handleSubmit(e)}>
+        <form onSubmit={(e) => handleSendMessage(e)}>
           <div class="bg-gray-300 p-4 flex">
             <textarea
               className=" flex items-center h-24 w-full rounded px-3 text-sm"
