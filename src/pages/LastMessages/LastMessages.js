@@ -24,7 +24,7 @@ const Messages = () => {
       });
   }, [data]);
 
-  const handleRead = (id) => {
+  const handleReadMessage = (id) => {
     setIsPending(true);
     newRequest
       .put(`/conversations/${id}`, {
@@ -83,7 +83,7 @@ const Messages = () => {
                 (!currentUser.isSeller && !conv.readByBuyer) ? (
                   <button
                     class="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-                    onClick={() => handleRead(conv.id)}
+                    onClick={() => handleReadMessage(conv.id)}
                   >
                     Mark as Read
                   </button>
