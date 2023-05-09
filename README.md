@@ -1,6 +1,7 @@
 Features:
 - React for frontend
 - Hooks for state management
+- TailwindCSS for styling
 - Stripe for payments
 - Chat and last messages
 - Guards Routes (Routes for the buyer and routes for the seller && and guarded actions change depending on if the user is a seller or buyer)
