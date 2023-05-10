@@ -73,8 +73,7 @@ const Orders = () => {
               <td className="px-6 py-4">
                 <button
                   onClick={() => handleContact(order)}
-                  type="button"
-                  className="text-white text-white bg-emerald-600 hover:bg-emerald-700 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                  className="font-medium text-blue-600 hover:underline"
                 >
                   {currentUser.isSeller
                     ? "Contact With Buyer"

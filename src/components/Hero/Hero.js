@@ -84,7 +84,7 @@ const Hero = () => {
             </div>
             <div className="lg:mb-0">
               <img
-                src="./img/hero.jpg"
+                src="./img/hero2.jpg"
                 className="w-5/6 rounded-lg shadow-lg hidden lg:block"
                 alt=""
               />
