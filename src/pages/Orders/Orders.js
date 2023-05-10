@@ -76,8 +76,8 @@ const Orders = () => {
                   className="font-medium text-blue-600 hover:underline"
                 >
                   {currentUser.isSeller
-                    ? "Contact With Buyer"
-                    : "Contact With Seller"}
+                    ? "Chat With Buyer"
+                    : "Chat With Seller"}
                 </button>
               </td>
             </tr>
